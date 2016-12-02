@@ -99,6 +99,21 @@ class Categoria extends AppModel
 			'finderQuery'			=> '',
 			'deleteQuery'			=> '',
 			'insertQuery'			=> ''
+		),
+		'Toolmania' => array(
+			'className'				=> 'Toolmania',
+			'joinTable'				=> 'categorias_toolmanias',
+			'foreignKey'			=> 'categoria_id',
+			'associationForeignKey'	=> 'toolmania_id',
+			'unique'				=> true,
+			'conditions'			=> '',
+			'fields'				=> '',
+			'order'					=> '',
+			'limit'					=> '',
+			'offset'				=> '',
+			'finderQuery'			=> '',
+			'deleteQuery'			=> '',
+			'insertQuery'			=> ''
 		)
 	);
 }

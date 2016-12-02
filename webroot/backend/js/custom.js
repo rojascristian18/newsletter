@@ -158,6 +158,29 @@ jQuery(document).ready(function($)
 	}
 
 	/**
+	 * Check multiple
+	 */
+	if ( $('.icheckbox-multiple input[type="checkbox"]').length )
+	{
+		$('.icheckbox-multiple input[type="checkbox"]').iCheck(
+		{
+			checkboxClass	: 'icheckbox_flat-red',
+			radioClass		: 'iradio_flat-red',
+			increaseArea	: '20%'
+		});
+	}
+
+	/**
+	* Ventana modal
+	* @param 	title 	Título de la ventana modal
+	* @param 	body 	Cuerpo del modal
+	* @param 	btn  	Botón del modal
+	* @param    obj 	Objeto de datos
+	* @returns 	bool 	Mostrar modal 
+	*/
+	function modal( title, body, btn, obj ) {}
+
+	/**
 	 * Funcion que permite obtener en formato YYYY-MM-DD una fecha determinada
 	 * @param			{Object}			fecha			Fecha que se desea obtener
 	 * @returns			{Object}			fecha			Fecha en formato YYYY-MM-DD

@@ -173,4 +173,31 @@ class AppController extends Controller
 
 		return true;
 	}
+
+	/**
+	 * Función que lista las categorías disponibles
+	 * @return array()
+	 */
+	public function getCategoriesList() {
+		$categorias = ClassRegistry::init('Categoria')->find('list', array('conditions' => array('Categoria.activo' => 1)));
+		return $categorias;
+	}
+
+	/**
+	* Calular IVA
+	* @param 	$precio 	num 	Valor del producto
+	* @param 	$iva 		bool 	Valor del IVA
+	* @return 	Integer 	Valor calculado
+	*/
+	public function precio($precio = null, $iva = null) {
+		if ( !empty($precio) && !empty($iva)) {
+			// Se quitan los 00
+			$iva = intval($iva);
+
+			//Calculamos valor con IVA
+			$precio = ($precio + round( ( ($precio*$iva) / 100) ) );
+
+			return round($precio);
+		}
+	}
 }

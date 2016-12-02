@@ -57,6 +57,14 @@
 			); ?>
 		</li>
 
+		<li class="<?= ($this->Html->menuActivo(array('controller' => 'toolmanias', 'action' => 'index')) ? 'active' : ''); ?>">
+		<?= $this->Html->link(
+				'<span class="fa fa-shopping-bag"></span> <span class="xn-text">Productos Toolmania</span>',
+				'/admin/toolmanias/index',
+				array('escape' => false)
+			); ?>
+		</li>
+
 		<? if ( $permiso ) : ?>
 
 			<li class="xn-title">Administración </li>

@@ -31,3 +31,11 @@
 }
 
 .alert {border: none; border-radius: 0;}
+
+.btn.btn-buscar.btn-success {
+    margin-top: 22px;
+}
+
+.btn.btn-buscar.btn-primary {
+    margin-top: 22px;
+}

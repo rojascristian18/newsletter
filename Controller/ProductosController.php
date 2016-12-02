@@ -47,7 +47,7 @@ class ProductosController extends AppController
 			if ( $this->Producto->save($this->request->data) )
 
 			{
-
+				
 				$this->Session->setFlash('Registro agregado correctamente.', null, array(), 'success');
 
 				$this->redirect(array('action' => 'index'));
@@ -81,7 +81,7 @@ class ProductosController extends AppController
 		if ( ! $this->Producto->exists($id) )
 
 		{
-
+			
 			$this->Session->setFlash('Registro inválido.', null, array(), 'danger');
 
 			$this->redirect(array('action' => 'index'));
