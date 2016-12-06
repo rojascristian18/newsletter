@@ -46,13 +46,8 @@
 									<td><?= $this->Form->input('activo', array('class' => 'icheckbox')); ?></td>
 								</tr>
 								<tr>
-									<th><?= $this->Form->label('Producto', 'Productos relacionados'); ?></th>
-									<td><?= $this->Form->input('Producto', array(
-										'empty' => 'Seleccione',
-										'class' => 'select form-control', 
-										'multiple' => 'multiple', 
-										'data-live-search' => true)
-									); ?></td>
+									<th><label>Orden categoría</label></th>
+									<td><?= $this->Form->input('orden'); ?></td>
 								</tr>
 							</table>
 

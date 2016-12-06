@@ -16,6 +16,11 @@ Class Toolmania extends AppModel {
 	public $useDbConfig = 'toolmania';
 
 	/**
+	* Config
+	*/
+	public $displayField	= 'reference';
+
+	/**
 	 * @Overrride paginate method
 	 
 	public function paginate($conditions, $fields, $order, $limit, $page = 1, $recursive = null, $extra = array()) {
@@ -102,6 +107,35 @@ Class Toolmania extends AppModel {
 		)
 	);
 
+	public $hasMany = array(
+		'SpecificPrice' => array(
+			'className'				=> 'SpecificPrice',
+			'foreignKey'			=> 'id_product',
+			'dependent'				=> false,
+			'conditions'			=> '',
+			'fields'				=> '',
+			'order'					=> '',
+			'limit'					=> '',
+			'offset'				=> '',
+			'exclusive'				=> '',
+			'finderQuery'			=> '',
+			'counterQuery'			=> ''
+		),
+		'SpecificPricePriority' => array(
+			'className'				=> 'SpecificPricePriority',
+			'foreignKey'			=> 'id_product',
+			'dependent'				=> false,
+			'conditions'			=> '',
+			'fields'				=> '',
+			'order'					=> '',
+			'limit'					=> '',
+			'offset'				=> '',
+			'exclusive'				=> '',
+			'finderQuery'			=> '',
+			'counterQuery'			=> ''
+		)
+	);
+	
 	/**
 	* CAllbacks
 	*/

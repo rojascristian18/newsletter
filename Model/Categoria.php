@@ -1,7 +1,7 @@
 <?php
 App::uses('AppModel', 'Model');
 class Categoria extends AppModel
-{
+{ 
 	/**
 	 * CONFIGURACION DB
 	 */
@@ -104,11 +104,12 @@ class Categoria extends AppModel
 			'className'				=> 'Toolmania',
 			'joinTable'				=> 'categorias_toolmanias',
 			'foreignKey'			=> 'categoria_id',
-			'associationForeignKey'	=> 'toolmania_id',
+			'associationForeignKey'	=> 'id_product',
 			'unique'				=> true,
 			'conditions'			=> '',
 			'fields'				=> '',
 			'order'					=> '',
+			'with'					=> 'CategoriasToolmania',
 			'limit'					=> '',
 			'offset'				=> '',
 			'finderQuery'			=> '',

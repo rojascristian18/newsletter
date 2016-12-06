@@ -341,177 +341,219 @@ class EmailsController extends AppController
 
 	}
 
-
-
+	/**
+	 * Función encargada de crear el contenido HTML del newsletter según su base HTML
+	 * @param 	(Int) 	$id 	Identificador del nnewsletter 	
+	 */
 	public function admin_generarHtml($id = null) {
 
-
-
 			$htmlEmail = $this->Email->find('first', array(
-
 				'conditions' => array('id' => $id), 
-
-				'fields' => array('html','nombre'),
-
+				'fields' => array('html','nombre', 'sitio_url'),
 				'contain'	=> array('Categoria')	
-
 				)
-
 			);
 
-
-
 			if (empty($htmlEmail)) {
-
 				$this->Session->setFlash('Registro inválido.', null, array(), 'danger');
-
 				$this->redirect(array('action' => 'index'));
-
 			}
 
-
-
-
-
+			// Nombre del Newsletter
 			$htmlNombre = $htmlEmail['Email']['nombre'];
 
-
+			// Url del sitio que corresponde el newsletter
+			$SitioUrl = $htmlEmail['Email']['sitio_url'];
 
 			$categoriasId = Hash::extract($htmlEmail['Categoria'], '{n}.id');
 
-
-
-
-
 			$categorias = ClassRegistry::init('Categoria')->find('all', array(
-
 					'conditions' => array(
-
 						'Categoria.id'	=> $categoriasId,
-
 						'Categoria.activo' => 1
-
 					),
-
-					'contain'	=> array('Producto')
-
+					'order'	=> array(
+						'Categoria.orden DESC'
+					)
 				)
-
 			);
 
-
-
+			// Se genera HTML para el newsletter (ver modelo Email)
 			$htmlEmail = $this->Email->armarHtmlEmail($htmlEmail);
 
-
-
 			$bloque = array();
-
 			$seccion = array();
 
 
-
 			// Dos columnas por defecto
-
 			$dosColumnas = true;
 
-
-
 			App::uses('CakeNumber', 'Utility');
-
 			App::uses('CakeText', 'Utility');
-
-
 
 			foreach ($categorias as $indice => $categoria) {
 
+				/**
+				* Obtenemos los productos elacionados a la categoría
+				*/
+				$relacionados = ClassRegistry::init('Categoria')->CategoriasToolmania->find('all', array(
+					'fields' => array('CategoriasToolmania.id_product'),
+					'conditions' => array('CategoriasToolmania.categoria_id' => $categoria['Categoria']['id'])
+					)
+				);
+
+				// Arreglo para alojar los IDs de los productos relacionados
+				$arrayRelacionadosId = array();
+
+				// Agregamos al arreglo $arrayRelacionadosId los IDs de los productos
+				foreach ($relacionados as $relacionado) {
+					$arrayRelacionadosId[] = $relacionado['CategoriasToolmania']['id_product'];
+				}
+
+				// Buscamos los productos que cumplan con el criterio
+				$productos	= ClassRegistry::init('Categoria')->Toolmania->find('all', array(
+					'fields' => array(
+						'concat(\'http://www.toolmania.cl/img/p/\',mid(im.id_image,1,1),\'/\', if (length(im.id_image)>1,concat(mid(im.id_image,2,1),\'/\'),\'\'),if (length(im.id_image)>2,concat(mid(im.id_image,3,1),\'/\'),\'\'),if (length(im.id_image)>3,concat(mid(im.id_image,4,1),\'/\'),\'\'),if (length(im.id_image)>4,concat(mid(im.id_image,5,1),\'/\'),\'\'), im.id_image, \'-large_default.jpg\' ) AS url_image',
+						'Toolmania.id_product', 
+						'pl.name', 
+						'Toolmania.price', 
+						'pl.link_rewrite', 
+						'Toolmania.reference', 
+						'Toolmania.show_price'
+					),
+					'joins' => array(
+						array(
+				            'table' => 'tm_product_lang',
+				            'alias' => 'pl',
+				            'type'  => 'LEFT',
+				            'conditions' => array(
+				                'Toolmania.id_product=pl.id_product'
+				            )
+
+			        	),
+			        	array(
+				            'table' => 'tm_image',
+				            'alias' => 'im',
+				            'type'  => 'LEFT',
+				            'conditions' => array(
+				                'Toolmania.id_product = im.id_product'
+				            )
+			        	)
+					),
+					'contain' => array(
+						'TaxRulesGroup' => array(
+							'TaxRule' => array(
+								'Tax'
+							)
+						),
+						'SpecificPrice' => array(
+							'conditions' => array(
+								'OR' => array(
+									'OR' => array(
+										array('SpecificPrice.from' => '000-00-00 00:00:00'),
+										array('SpecificPrice.to' => '000-00-00 00:00:00')
+									),
+									'AND' => array(
+										'SpecificPrice.from <= "' . date('Y-m-d H:i:s') . '"',
+										'SpecificPrice.to >= "' . date('Y-m-d H:i:s') . '"'
+									)
+								)
+							)
+						),
+						'SpecificPricePriority'
+					),
+					'conditions' => array(
+						'Toolmania.id_product' => $arrayRelacionadosId,
+						'Toolmania.active' => 1,
+						'Toolmania.available_for_order' => 1,
+						'Toolmania.id_shop_default' => 1,
+						'pl.id_lang' => 1 
+					),
+					'order' => array(
+						'Toolmania.id_product DESC'
+					)
+				));
+
+				// Agregamos los productos al arreglo final
+				$categoria['Producto'] = $productos;
 
 
+				// Se abre el bloque sección
 				$seccion[$indice] = $htmlEmail['seccion_categoria'] . $htmlEmail['categoria'];
 
-
-
+				// Agregamos el nombre de la categoría al HTML
 				$seccion[$indice] = str_replace('[**categoria_nombre**]',$categoria['Categoria']['nombre'], $seccion[$indice]);
 
-
-
-
-
+				// 2 o 3 columnas de prodctos
 				$dosColumnas = ( $categoria['Categoria']['tres_columnas'] ) ? false : true;
 
-
-
+				/**
+				* Agregamos los productos al HTML
+				*/
 				foreach ($categoria['Producto'] as $llave => $producto) {
+					
+					// Retornar valor del producto con iva;
+					$producto['Toolmania']['valor_iva'] = $this->precio($producto['Toolmania']['price'], $producto['TaxRulesGroup']['TaxRule'][0]['Tax']['rate']);
+					
+
+					// Criterio del precio específico del producto
+					foreach ($producto['SpecificPricePriority'] as $criterio) {
+						$precioEspecificoPrioridad = explode(';', $criterio['priority']);
+					}
+
+					// Retornar último precio espeficico según criterio del producto
+					foreach ($producto['SpecificPrice'] as $precio) {
+						$producto['Toolmania']['valor_final'] = $this->precio($producto['Toolmania']['valor_iva'], ($precio['reduction'] * 100 * -1) );
+						$producto['Toolmania']['descuento'] = ($precio['reduction'] * 100 * -1 );
+					}
+
+					/**
+					* Información del producto
+					*/
+					$urlProducto 			= $producto[0]['url_image'];
+					$porcentaje_descuento 	= ( !empty($producto['Toolmania']['descuento']) ) ? $producto['Toolmania']['descuento'] : 0 ;
+					$nombre_producto		= CakeText::truncate($producto['pl']['name'], 40, array('exact' => false));
+					$modelo_producto		= $producto['Toolmania']['reference'];
+					$valor_producto			= CakeNumber::currency($producto['Toolmania']['valor_iva'] , 'CLP');
+					$oferta_producto		= CakeNumber::currency($producto['Toolmania']['valor_final'] , 'CLP');
+					$url_producto			= sprintf('%s%s-%s.html', $SitioUrl, $producto['pl']['link_rewrite'], $producto['Toolmania']['id_product']);
 
 
-
-					$urlProducto 			= sprintf('%s/img/%s/%d/%s', Router::url('/', true), 'Producto', $producto['id'], $producto['imagen']);
-
-					$porcentaje_descuento 	= ( !empty($producto['porcentaje_oferta']) ) ? $producto['porcentaje_oferta'] : 0 ;
-
-					$nombre_producto		= CakeText::truncate($producto['nombre'], 40, array('exact' => false));
-
-					$modelo_producto		= $producto['modelo'];
-
-					$valor_producto			= CakeNumber::currency($producto['valor'], 'CLP');
-
-					$oferta_producto		= CakeNumber::currency($producto['valor'] - ( ($producto['valor'] / 100) * $porcentaje_descuento ), 'CLP');
-
-					$url_producto			= $producto['url'];
-
-
-
+					/**
+					* Agregamos la información al HTML del email
+					*/
 					$seccion[$indice] .= ( $dosColumnas ) ? $htmlEmail['bloque_2'] : $htmlEmail['bloque_3'] ;
-
 					$seccion[$indice] = str_replace('[**url_imagen_producto**]',$urlProducto, $seccion[$indice]);
-
 					$seccion[$indice] = str_replace('[**porcentaje_producto**]', $porcentaje_descuento . '%' , $seccion[$indice]);
-
 					$seccion[$indice] = str_replace('[**nombre_producto**]', $nombre_producto , $seccion[$indice]);
-
 					$seccion[$indice] = str_replace('[**modelo_producto**]', $modelo_producto , $seccion[$indice]);
-
 					$seccion[$indice] = str_replace('[**antes_producto**]', $valor_producto , $seccion[$indice]);
-
 					$seccion[$indice] = str_replace('[*valor_producto*]', $oferta_producto , $seccion[$indice]);
-
 					$seccion[$indice] = str_replace('[**url_producto**]', $url_producto , $seccion[$indice]);
-
-
-
 				}
 
 
-
+				// Se cierra el bloque sección
 				$seccion[$indice] .= $htmlEmail['seccion_bloque'];
-
-
 
 			}			
 
 		
-
+			// Unimos los contenidos
 			$seccion = implode($seccion, '');
-
-			
 
 			$htmlFinal = '';
 
+			// Limpiamos espacios en blanco y asignamos HTML de cabecera
 			$htmlFinal .= trim($htmlEmail['cabecera']);
 
-			
-
+			// Agregamos HTML de secciones y productos
 			$htmlFinal .= $seccion;
 
-
-
+			// Agregamos HTML del footer
 			$htmlFinal .= $htmlEmail['footer'];
 
-
-
 			$this->set(compact('htmlFinal', 'htmlNombre'));
-
-
 
 	}
 

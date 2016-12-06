@@ -38,6 +38,10 @@
 									<td><?= $this->Form->input('activo', array('class' => 'icheckbox')); ?></td>
 								</tr>
 								<tr>
+									<th><?= $this->Form->label('sitio_url', 'Url Sitio web'); ?></th>
+									<td><?= $this->Form->input('sitio_url'); ?></td>
+								</tr>
+								<tr>
 									<th><?= $this->Form->label('plantilla_id', 'Plantilla'); ?></th>
 									<td><?= $this->Form->input('plantilla_id', array(
 										'class' => 'form-control select',

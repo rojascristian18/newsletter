@@ -78,7 +78,7 @@ class ToolmaniasController extends AppController {
 					case 'name':
 						$paginate		= array_replace_recursive($paginate, array(
 							'conditions'	=> array(
-								'pl.name' => $this->request->data['Toolmania']['nombre_buscar']
+								'pl.name LIKE "%' . $this->request->data['Toolmania']['nombre_buscar'] . '%"'
 							)
 						));
 						break;
@@ -198,14 +198,29 @@ class ToolmaniasController extends AppController {
 					'TaxRule' => array(
 						'Tax'
 					)
-				)
+				),
+				'SpecificPrice' => array(
+					'conditions' => array(
+						'OR' => array(
+							'OR' => array(
+								array('SpecificPrice.from' => '000-00-00 00:00:00'),
+								array('SpecificPrice.to' => '000-00-00 00:00:00')
+							),
+							'AND' => array(
+								'SpecificPrice.from <= "' . date('Y-m-d H:i:s') . '"',
+								'SpecificPrice.to >= "' . date('Y-m-d H:i:s') . '"'
+							)
+						)
+					)
+				),
+				'SpecificPricePriority'
 			),
 			'conditions' => array(
 				'Toolmania.id_product' => $id,
 				'Toolmania.active' => 1,
 				'Toolmania.available_for_order' => 1,
 				'Toolmania.id_shop_default' => 1,
-				'pl.id_lang' => 1
+				'pl.id_lang' => 1 
 			)
 		));
 
@@ -255,7 +270,21 @@ class ToolmaniasController extends AppController {
 			),
 			'limit' => 10
 		));*/
+
+		// Retornar valor con iva;
 		$producto['Toolmania']['valor_iva'] = $this->precio($producto['Toolmania']['price'], $producto['TaxRulesGroup']['TaxRule'][0]['Tax']['rate']);
+		
+
+		// Criterio del precio específico
+		foreach ($producto['SpecificPricePriority'] as $criterio) {
+			$precioEspecificoPrioridad = explode(';', $criterio['priority']);
+		}
+
+		// Retornar precio espeficico según criterio
+		foreach ($producto['SpecificPrice'] as $precio) {
+			$producto['Toolmania']['valor_final'] = $this->precio($producto['Toolmania']['valor_iva'], ($precio['reduction'] * 100 * -1) );
+			$producto['Toolmania']['descuento'] = ($precio['reduction'] * 100 * -1 );
+		}
 
 		$categorias = $this->Toolmania->Categoria->find('list', array('conditons' => array('Categoria.activo' => 1)));
 

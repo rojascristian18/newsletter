@@ -222,17 +222,6 @@ class Email extends AppModel
 			$htmlSeccionBottom		= substr($html['Email']['html'], $limite3Columnas, $diff_cuerpo_bottom);
 		}
 
-		//print_r($htmlCabecera);
-		/*print_r($htmlSeccionTop);
-		print_r($htmlCategoria);
-		print_r($htmlBloque2Columnas);
-		print_r($htmlSeccionBottom);
-		print_r($htmlSeccionTop);
-		print_r($htmlCategoria);
-		print_r($htmlBloque2Columnas);
-		exit;*/
-
-
 		// Limpiamos las etiquetas del html
 		$htmlSeccionTop			= str_replace('[**seccion**]', '', trim($htmlSeccionTop));
 		$htmlCategoria			= str_replace('[**categoria**]', '', trim($htmlCategoria));

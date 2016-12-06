@@ -48,12 +48,21 @@
 								</tr>
 								<tr>
 									<th><?= $this->Form->label('Producto', 'Productos relacionados'); ?></th>
-									<td><?= $this->Form->select('Producto', $productos, array(
-										'empty' => 'Seleccione',
-										'class' => 'select form-control', 
-										'multiple' => 'multiple', 
-										'data-live-search' => true)
-									); ?></td>
+									<td><ul id="sortable" class="list-group border-bottom">
+								<?	foreach ($productos as $indice => $producto) : ?>
+										<li class="list-group-item" data-related="<?=$indice;?>"  id="relacionado-<?=$indice;?>"><?=$producto;?></li>	
+								<?	endforeach; ?>
+									</ul>
+									</td>
+								</tr>
+								<!--<tr style="position: relative;">
+									<th><label>Orden productos</label></th>
+									<td>
+									<?= $this->Form->input('meta_orden', array('id' => 'orden') ); ?></td>
+								</tr>-->
+								<tr>
+									<th><label>Orden categoría</label></th>
+									<td><?= $this->Form->input('orden'); ?></td>
 								</tr>
 							</table>
 
@@ -68,3 +77,18 @@
 		</div>
 	</div>
 </div>
+<script type="text/javascript">
+	  /*$( function() {
+	 var id_related = [];
+    $( "#sortable" ).sortable({
+    	 update: function(event, ui) {
+	        $('.label-sort').each(function(i) { 
+	           id_related.push( $(this).attr('data-related') ); // updates the attribute
+	           $('#orden').val(id_related);
+	           id_related = [];
+	        });
+	    }
+    });
+    $( "#sortable" ).disableSelection();
+  } );*/
+</script>

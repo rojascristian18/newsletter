@@ -65,9 +65,8 @@ class CategoriasController extends AppController
 
 		$emails	= $this->Categoria->Email->find('list');
 
-		$productos	= $this->Categoria->Producto->find('list', array('conditions' => array('Producto.activo' => 1)));
 
-		$this->set(compact('emails', 'productos'));
+		$this->set(compact('emails'));
 
 	}
 
@@ -92,23 +91,6 @@ class CategoriasController extends AppController
 		if ( $this->request->is('post') || $this->request->is('put') )
 
 		{
-
-			/**
-
-			* Se eliminan las relaciones categorias-productos para volver a agregarlas 
-
-			*/
-
-			$this->Categoria->CategoriasProducto->deleteAll(
-
-				array(
-
-					'CategoriasProducto.categoria_id' => $id,
-
-				)
-
-           	);
-
 
 
 			if ( $this->Categoria->saveAll($this->request->data) )
@@ -137,22 +119,63 @@ class CategoriasController extends AppController
 
 			$this->request->data	= $this->Categoria->find('first', array(
 
-				'conditions'	=> array('Categoria.id' => $id),
-
-				'contain'		=> array('Producto')
+				'conditions'	=> array('Categoria.id' => $id)
 
 			));
 
 		}
 
 
-
 		$emails	= $this->Categoria->Email->find('list');
+		
 
-		$productos	= $this->Categoria->Producto->find('list', array('conditions' => array('Producto.activo' => 1)));
+		$relacionados = $this->Categoria->CategoriasToolmania->find('all', array(
+			'fields' => array('CategoriasToolmania.id_product'),
+			'conditions' => array('CategoriasToolmania.categoria_id' => $id)
+			)
+		);
 
+		$arrayProductosId = array();
+		$arrayRelacionadosId = array();
 
+		
 
+		foreach ($relacionados as $relacionado) {
+			$arrayRelacionadosId[] = $relacionado['CategoriasToolmania']['id_product'];
+		}
+
+		$productos	= $this->Categoria->Toolmania->find('list', array(
+			'fields' => array(
+				'Toolmania.id_product',
+				'Toolmania.reference'
+			),
+			'conditions' => array(
+				'Toolmania.id_product' => $arrayRelacionadosId,
+				'Toolmania.active' => 1,
+				'Toolmania.available_for_order' => 1,
+				'Toolmania.id_shop_default' => 1,
+				'pl.id_lang' => 1 
+			),
+			'joins' => array(
+				array(
+		            'table' => 'tm_product_lang',
+		            'alias' => 'pl',
+		            'type'  => 'LEFT',
+		            'conditions' => array(
+		                'Toolmania.id_product=pl.id_product'
+		            )
+
+	        	),
+	        	array(
+		            'table' => 'tm_image',
+		            'alias' => 'im',
+		            'type'  => 'LEFT',
+		            'conditions' => array(
+		                'Toolmania.id_product = im.id_product'
+		            )
+	        	)
+			)
+		));
 
 
 		$this->set(compact('emails', 'productos'));
