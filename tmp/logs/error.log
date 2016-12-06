@@ -15995,3 +15995,12 @@ Request URL: /newsletter/backend/img/logo@2x.png
 Stack Trace:
 #0 C:\wamp64\www\newsletter\webroot\index.php(86): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
 #1 {main}
+2016-12-06 16:29:27 Error: [MissingControllerException] Controller class BackendController could not be found.
+Exception Attributes: array (
+  'class' => 'BackendController',
+  'plugin' => NULL,
+)
+Request URL: /newsletter/backend/img/logo@2x.png
+Stack Trace:
+#0 C:\wamp64\www\newsletter\webroot\index.php(86): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#1 {main}
