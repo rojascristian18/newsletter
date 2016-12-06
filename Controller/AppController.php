@@ -11,8 +11,8 @@ class AppController extends Controller
 		'Session',
 		'Auth'		=> array(
 			'loginAction'		=> array('controller' => 'administradores', 'action' => 'login', 'admin' => true),
-			'loginRedirect'		=> '/admin/emails',
-			'logoutRedirect'	=> '/admin',
+			'loginRedirect'		=> '/emails',
+			'logoutRedirect'	=> '/',
 			'authError'			=> 'No tienes permisos para entrar a esta sección.',
 			'authenticate'		=> array(
 				'Form'				=> array(

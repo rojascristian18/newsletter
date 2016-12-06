@@ -6,6 +6,7 @@
 				'/admin',
 				array('escape' => false)
 			); ?>
+			<a href="#" class="x-navigation-control"></a>
 		</li>
 		<li class="xn-profile active">
             <div class="profile">
@@ -27,7 +28,7 @@
 		<li class="<?= ($this->Html->menuActivo(array('controller' => 'emails', 'action' => 'index')) ? 'active' : ''); ?>">
 		<?= $this->Html->link(
 				'<span class="fa fa-envelope"></span> <span class="xn-text">Newsletter</span>',
-				'/admin/emails/index',
+				'/emails/index',
 				array('escape' => false)
 			); ?>
 		</li>
@@ -35,7 +36,7 @@
 		<li class="<?= ($this->Html->menuActivo(array('controller' => 'plantillas', 'action' => 'index')) ? 'active' : ''); ?>">
 		<?= $this->Html->link(
 				'<span class="fa fa-file"></span> <span class="xn-text">Plantillas</span>',
-				'/admin/plantillas/index',
+				'/plantillas/index',
 				array('escape' => false)
 			); ?>
 		</li>
@@ -44,23 +45,23 @@
 		<li class="<?= ($this->Html->menuActivo(array('controller' => 'categorias', 'action' => 'index')) ? 'active' : ''); ?>">
 		<?= $this->Html->link(
 				'<span class="fa fa-list-ol"></span> <span class="xn-text">Categorías</span>',
-				'/admin/categorias/index',
+				'/categorias/index',
 				array('escape' => false)
 			); ?>
 		</li>
-
+		<? if ( $permiso ) : ?>
 		<li class="<?= ($this->Html->menuActivo(array('controller' => 'productos', 'action' => 'index')) ? 'active' : ''); ?>">
 		<?= $this->Html->link(
 				'<span class="fa fa-shopping-bag"></span> <span class="xn-text">Productos</span>',
-				'/admin/productos/index',
+				'/productos/index',
 				array('escape' => false)
 			); ?>
 		</li>
-
+		<? endif; ?>
 		<li class="<?= ($this->Html->menuActivo(array('controller' => 'toolmanias', 'action' => 'index')) ? 'active' : ''); ?>">
 		<?= $this->Html->link(
 				'<span class="fa fa-shopping-bag"></span> <span class="xn-text">Productos Toolmania</span>',
-				'/admin/toolmanias/index',
+				'/toolmanias/index',
 				array('escape' => false)
 			); ?>
 		</li>
@@ -71,7 +72,7 @@
 			<li class="<?= ($this->Html->menuActivo(array('controller' => 'administradores', 'action' => 'index')) ? 'active' : ''); ?>">
 			<?= $this->Html->link(
 					'<span class="fa fa-users"></span> <span class="xn-text">Administradores</span>',
-					'/admin/',
+					'/',
 					array('escape' => false)
 				); ?>
 			</li>
