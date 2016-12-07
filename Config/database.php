@@ -5,8 +5,8 @@ class DATABASE_CONFIG
 		'datasource'	=> 'Database/Mysql',
 		'persistent'	=> false,
 		'host'			=> 'localhost',
-		'login'			=> 'root',
-		'password'		=> '',
+		'login'			=> 'nodriza',
+		'password'		=> 'N0DriZ42016',
 		'database'		=> 'newsletter',
 		'prefix'		=> 'news_',
 		'encoding'		=> 'utf8'

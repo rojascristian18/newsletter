@@ -609,9 +609,11 @@ class EmailsController extends AppController
 						'semaforo' => true
 					)
 				);	
+
+				$this->Email->save($data);
 			}
 
-			$this->Email->save($data);
+			
 
 			$this->set(compact('htmlFinal', 'htmlNombre'));
 
