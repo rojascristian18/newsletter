@@ -154,7 +154,7 @@ class CategoriasController extends AppController
 				'Toolmania.active' => 1,
 				'Toolmania.available_for_order' => 1,
 				'Toolmania.id_shop_default' => 1,
-				'pl.id_lang' => 1 
+				'pl.id_lang' => 1
 			),
 			'joins' => array(
 				array(
@@ -171,7 +171,8 @@ class CategoriasController extends AppController
 		            'alias' => 'im',
 		            'type'  => 'LEFT',
 		            'conditions' => array(
-		                'Toolmania.id_product = im.id_product'
+		                'Toolmania.id_product = im.id_product',
+		                'im.cover' => 1
 		            )
 	        	)
 			)

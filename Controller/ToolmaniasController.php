@@ -23,7 +23,8 @@ class ToolmaniasController extends AppController {
 				'Toolmania.price', 
 				'pl.link_rewrite', 
 				'Toolmania.reference', 
-				'Toolmania.show_price'),
+				'Toolmania.show_price'
+			),
 			'joins' => array(
 				array(
 		            'table' => 'tm_product_lang',
@@ -39,7 +40,8 @@ class ToolmaniasController extends AppController {
 		            'alias' => 'im',
 		            'type'  => 'LEFT',
 		            'conditions' => array(
-		                'Toolmania.id_product = im.id_product'
+		                'Toolmania.id_product = im.id_product',
+		                'im.cover' => 1
 		            )
 	        	)
 			),
@@ -109,7 +111,8 @@ class ToolmaniasController extends AppController {
 		            'alias' => 'im',
 		            'type'  => 'LEFT',
 		            'conditions' => array(
-		                'Toolmania.id_product = im.id_product'
+		                'Toolmania.id_product = im.id_product',
+		                'im.cover' => 1
 		            )
 	        	)
 			),
@@ -122,6 +125,7 @@ class ToolmaniasController extends AppController {
 		));
 
 		$productos	= $this->paginate();
+		
 		$categorias = $this->Toolmania->Categoria->find('list', array('conditons' => array('Categoria.activo' => 1)));
 		$totalMostrados = count($productos);
 
@@ -188,7 +192,8 @@ class ToolmaniasController extends AppController {
 		            'alias' => 'im',
 		            'type'  => 'LEFT',
 		            'conditions' => array(
-		                'Toolmania.id_product = im.id_product'
+		                'Toolmania.id_product = im.id_product',
+		                'im.cover' => 1
 		            )
 	        	)
 			),
