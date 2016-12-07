@@ -27,15 +27,15 @@
 								</tr>
 								<tr>
 									<th><?= $this->Form->label('color_fondo', 'Color fondo <small>(Opcional)</small>'); ?></th>
-									<td><?= $this->Form->input('color_fondo'); ?></td>
+									<td><?= $this->Form->input('color_fondo', array('class' => 'colorpicker form-control')); ?></td>
 								</tr>
 								<tr>
 									<th><?= $this->Form->label('color_titulo', 'Color titulo <small>(Opcional)</small>'); ?></th>
-									<td><?= $this->Form->input('color_titulo'); ?></td>
+									<td><?= $this->Form->input('color_titulo', array('class' => 'colorpicker form-control')); ?></td>
 								</tr>
 								<tr>
 									<th><?= $this->Form->label('color_parrafo', 'Color parrafo <small>(Opcional)</small>'); ?></th>
-									<td><?= $this->Form->input('color_parrafo'); ?></td>
+									<td><?= $this->Form->input('color_parrafo', array('class' => 'colorpicker form-control')); ?></td>
 								</tr>
 								<tr>
 									<th><?= $this->Form->label('tres_columnas', '3 columnas'); ?></th>
@@ -47,7 +47,24 @@
 								</tr>
 								<tr>
 									<th><label>Orden categoría</label></th>
-									<td><?= $this->Form->input('orden'); ?></td>
+									<td><?= $this->Form->input('orden', array('class' => 'spinner_default form-control', 'type' => 'text')); ?></td>
+								</tr>
+								<tr>
+									<th><label>Ordenar productos por</label></th>
+									<td>
+									<? $opciones = array(
+										'nombre_asc' 		=> 'Nombre Asc',
+										'nombre_desc' 		=> 'Nombre Desc',
+										'precio_asc' 		=> 'Precio Asc',
+										'precio_desc' 		=> 'Precio Desc',
+										'referencia_asc' 	=> 'Referencia Asc',
+										'referencia_desc' 	=> 'Referencia Desc',
+										); ?>
+									<?= $this->Form->select('orden_productos', $opciones, array(
+										'class' => 'form-control select',
+										'empty' => 'Seleccione')
+									); ?>
+									</td>
 								</tr>
 							</table>
 

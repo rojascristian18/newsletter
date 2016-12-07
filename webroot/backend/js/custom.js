@@ -59,6 +59,20 @@ jQuery(document).ready(function($)
 		$query.show();
 	});
 
+	/**
+	* Spinner
+	*/
+	if ($('.spinner_default').length > 0) {
+		$(".spinner_default").spinner();
+	}
+
+	/**
+	* ColorPicker
+	*/
+	if($(".colorpicker").length > 0) {
+		$(".colorpicker").colorpicker({format: 'hex'});
+	}
+                
 	/* LOCK SCREEN */
     $('.lockscreen-box .lsb-access').on('click',function()
 	{

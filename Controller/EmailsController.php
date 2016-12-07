@@ -345,7 +345,7 @@ class EmailsController extends AppController
 	 * Función encargada de crear el contenido HTML del newsletter según su base HTML
 	 * @param 	(Int) 	$id 	Identificador del nnewsletter 	
 	 */
-	public function admin_generarHtml($id = null) {
+	public function admin_generarHtml($id = null, $save = false) {
 
 			$htmlEmail = $this->Email->find('first', array(
 				'conditions' => array('id' => $id), 
@@ -384,6 +384,11 @@ class EmailsController extends AppController
 			$bloque = array();
 			$seccion = array();
 
+			// Orden de productos por defecto
+			$ordenProductos = array(
+				'Toolmania.id_product DESC'
+			);
+
 
 			// Dos columnas por defecto
 			$dosColumnas = true;
@@ -392,6 +397,45 @@ class EmailsController extends AppController
 			App::uses('CakeText', 'Utility');
 
 			foreach ($categorias as $indice => $categoria) {
+
+				/**
+				* Condiciones para odenar productos
+				*/
+				if (isset($categoria['Categoria']['orden_productos']) && ! empty($categoria['Categoria']['orden_productos'])) {
+					
+					switch ($categoria['Categoria']['orden_productos']) {
+						case 'nombre_asc':
+							$ordenProductos = array(
+								'pl.name ASC'
+							);
+							break;
+						case 'nombre_desc':
+							$ordenProductos = array(
+								'pl.name DESC'
+							);
+							break;
+						case 'precio_asc':
+							$ordenProductos = array(
+								'Toolmania.price ASC'
+							);
+							break;
+						case 'precio_desc':
+							$ordenProductos = array(
+								'Toolmania.price DESC'
+							);
+							break;
+						case 'referencia_asc':
+							$ordenProductos = array(
+								'Toolmania.reference ASC'
+							);
+							break;
+						case 'referencia_desc':
+							$ordenProductos = array(
+								'Toolmania.reference DESC'
+							);
+							break;
+					}
+				}
 
 				/**
 				* Obtenemos los productos elacionados a la categoría
@@ -469,9 +513,7 @@ class EmailsController extends AppController
 						'Toolmania.id_shop_default' => 1,
 						'pl.id_lang' => 1 
 					),
-					'order' => array(
-						'Toolmania.id_product DESC'
-					)
+					'order' => $ordenProductos
 				));
 
 				// Agregamos los productos al arreglo final
@@ -503,18 +545,22 @@ class EmailsController extends AppController
 
 					// Retornar último precio espeficico según criterio del producto
 					foreach ($producto['SpecificPrice'] as $precio) {
-						$producto['Toolmania']['valor_final'] = $this->precio($producto['Toolmania']['valor_iva'], ($precio['reduction'] * 100 * -1) );
-						$producto['Toolmania']['descuento'] = ($precio['reduction'] * 100 * -1 );
+						if ( $precio['reduction'] == 0 ) {
+							$producto['Toolmania']['valor_final'] = $producto['Toolmania']['valor_iva'];
+						}else{
+							$producto['Toolmania']['valor_final'] = $this->precio($producto['Toolmania']['valor_iva'], ($precio['reduction'] * 100 * -1) );
+							$producto['Toolmania']['descuento'] = ($precio['reduction'] * 100 * -1 );
+						}
 					}
 
 					/**
 					* Información del producto
 					*/
 					$urlProducto 			= $producto[0]['url_image'];
-					$porcentaje_descuento 	= ( !empty($producto['Toolmania']['descuento']) ) ? $producto['Toolmania']['descuento'] : 0 ;
+					$porcentaje_descuento 	= ( !empty($producto['Toolmania']['descuento']) ) ? $producto['Toolmania']['descuento'] . '%' : '<font size="2">Oferta</font>' ;
 					$nombre_producto		= CakeText::truncate($producto['pl']['name'], 40, array('exact' => false));
 					$modelo_producto		= $producto['Toolmania']['reference'];
-					$valor_producto			= CakeNumber::currency($producto['Toolmania']['valor_iva'] , 'CLP');
+					$valor_producto			= ( $precio['reduction'] != 0 ) ? CakeNumber::currency($producto['Toolmania']['valor_iva'] , 'CLP') : '' ;
 					$oferta_producto		= CakeNumber::currency($producto['Toolmania']['valor_final'] , 'CLP');
 					$url_producto			= sprintf('%s%s-%s.html', $SitioUrl, $producto['pl']['link_rewrite'], $producto['Toolmania']['id_product']);
 
@@ -524,7 +570,7 @@ class EmailsController extends AppController
 					*/
 					$seccion[$indice] .= ( $dosColumnas ) ? $htmlEmail['bloque_2'] : $htmlEmail['bloque_3'] ;
 					$seccion[$indice] = str_replace('[**url_imagen_producto**]',$urlProducto, $seccion[$indice]);
-					$seccion[$indice] = str_replace('[**porcentaje_producto**]', $porcentaje_descuento . '%' , $seccion[$indice]);
+					$seccion[$indice] = str_replace('[**porcentaje_producto**]', $porcentaje_descuento, $seccion[$indice]);
 					$seccion[$indice] = str_replace('[**nombre_producto**]', $nombre_producto , $seccion[$indice]);
 					$seccion[$indice] = str_replace('[**modelo_producto**]', $modelo_producto , $seccion[$indice]);
 					$seccion[$indice] = str_replace('[**antes_producto**]', $valor_producto , $seccion[$indice]);
@@ -552,6 +598,20 @@ class EmailsController extends AppController
 
 			// Agregamos HTML del footer
 			$htmlFinal .= $htmlEmail['footer'];
+
+			
+			if ( $save ) {
+				// Guardar ultimo html generado
+				$data = array(
+					'Email' => array(
+						'id' => $id,
+						'ultimo_html' => $htmlFinal,
+						'semaforo' => true
+					)
+				);	
+			}
+
+			$this->Email->save($data);
 
 			$this->set(compact('htmlFinal', 'htmlNombre'));
 

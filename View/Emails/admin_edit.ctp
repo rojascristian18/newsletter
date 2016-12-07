@@ -33,7 +33,7 @@
 						<? 	if ( ! empty($this->request->data['Email']['imagen']) ) : ?>
 								<tr>
 									<th><?= $this->Form->label('imagen', 'Imagen actual'); ?></th>
-									<td><?= $this->Html->image($this->request->data['Email']['imagen']['path']); ?></td>
+									<td><?= $this->Html->image($this->request->data['Email']['imagen']['path'], array('class' => 'img-responsive')); ?></td>
 								</tr>
 								<tr>
 									<th><?= $this->Form->label('imagen', 'Actualizar imagen'); ?></th>
@@ -66,6 +66,10 @@
 										'multiple' => 'multiple', 
 										'data-live-search' => true)
 									); ?></td>
+								</tr>
+								<tr>
+									<th>Último Html guardado <br><button type="button" data-clipboard-target="#htmlEmail" class="btn btn-xs btn-primary btn-copy btn-block" data-toggle="popover" data-trigger="manual" data-placement="right"><i class="fa fa-clipboard" aria-hidden="true"></i> Copiar Html</button></th>
+									<td><textarea id="htmlEmail" class="form-control"><?=h($this->request->data['Email']['ultimo_html']);?></textarea></td>
 								</tr>
 							</table>
 

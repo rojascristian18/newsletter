@@ -27,6 +27,7 @@
 			'/backend/js/plugins/bootstrap/bootstrap-select',
 			'/backend/js/plugins/icheck/icheck.min',
 			'/backend/js/plugins/clipboard.min',
+			'/backend/js/plugins/bootstrap/bootstrap-colorpicker',
 			'/backend/js/plugins/datatables/jquery.dataTables.min',
 			'/backend/js/custom',
 			/*

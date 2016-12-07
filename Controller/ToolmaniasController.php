@@ -193,7 +193,11 @@ class ToolmaniasController extends AppController {
 	        	)
 			),
 			'contain' => array(
-				'Categoria',
+				'Categoria' => array(
+					'conditions' => array(
+						'Categoria.activo' => 1
+					)
+				),
 				'TaxRulesGroup' => array(
 					'TaxRule' => array(
 						'Tax'
@@ -220,7 +224,7 @@ class ToolmaniasController extends AppController {
 				'Toolmania.active' => 1,
 				'Toolmania.available_for_order' => 1,
 				'Toolmania.id_shop_default' => 1,
-				'pl.id_lang' => 1 
+				'pl.id_lang' => 1
 			)
 		));
 
@@ -286,7 +290,7 @@ class ToolmaniasController extends AppController {
 			$producto['Toolmania']['descuento'] = ($precio['reduction'] * 100 * -1 );
 		}
 
-		$categorias = $this->Toolmania->Categoria->find('list', array('conditons' => array('Categoria.activo' => 1)));
+		$categorias = $this->Toolmania->Categoria->find('list', array('conditions' => array('Categoria.activo' => 1)));
 
 		$this->set(compact('producto', 'categorias'));
 

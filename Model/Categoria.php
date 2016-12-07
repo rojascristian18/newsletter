@@ -38,7 +38,17 @@ class Categoria extends AppModel
 			'notBlank' => array(
 				'rule'			=> array('notBlank'),
 				'last'			=> true,
-				//'message'		=> 'Mensaje de validación personalizado',
+				'message'		=> 'Campo requerido',
+				//'allowEmpty'	=> true,
+				//'required'		=> false,
+				//'on'			=> 'update', // Solo valida en operaciones de 'create' o 'update'
+			),
+		),
+		'orden' => array(
+			'notBlank' => array(
+				'rule'			=> array('notBlank'),
+				'last'			=> true,
+				'message'		=> 'Campo requerido',
 				//'allowEmpty'	=> true,
 				//'required'		=> false,
 				//'on'			=> 'update', // Solo valida en operaciones de 'create' o 'update'

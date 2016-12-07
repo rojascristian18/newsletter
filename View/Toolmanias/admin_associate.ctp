@@ -44,7 +44,10 @@
 									</tr>
 									<tr>
 										<th><?= $this->Form->label('Categoria', 'Categorias'); ?></th>
-										<td><?=$this->Form->input('Categoria', array('class' => 'form-control', 'multiple' => 'multiple' ));?></td>
+										<td><?=$this->Form->input('Categoria', array(
+											'class' => 'form-control', 
+											'multiple' => 'multiple',
+											'empty' => 'Sin categoría' ));?></td>
 									</tr>
 								</tbody>
 							</table>

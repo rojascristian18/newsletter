@@ -113,7 +113,16 @@ class Email extends AppModel
 
 		parent::afterSave($created, $options);
 
-		if ( isset($this->data['Email']) ) {
+		$semaforo = true;
+
+		if (isset($this->data['Email']) && $this->data['Email']['semaforo'] ) {
+			$semaforo = false;
+			unset($this->data['Email']['semaforo']);
+		}
+
+		if ( isset($this->data['Email']) && $semaforo) {
+
+
 			
 			$htmlPlantilla = ClassRegistry::init('Plantilla')->find('first', array(
 					'conditions' => array(

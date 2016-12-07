@@ -1,0 +1,320 @@
+2016-12-07 13:09:13 Notice: Notice (8): Undefined index: semaforo in [/var/www/html/newsletter2/Model/Email.php, line 118]
+Trace:
+Email::afterSave() - APP/Model/Email.php, line 118
+CakeEventManager::dispatch() - APP/Cake/2.7.7/lib/Cake/Event/CakeEventManager.php, line 241
+Model::_doSave() - APP/Cake/2.7.7/lib/Cake/Model/Model.php, line 1961
+Model::save() - APP/Cake/2.7.7/lib/Cake/Model/Model.php, line 1751
+EmailsController::admin_add() - APP/Controller/EmailsController.php, line 46
+ReflectionMethod::invokeArgs() - [internal], line ??
+Controller::invokeAction() - APP/Cake/2.7.7/lib/Cake/Controller/Controller.php, line 490
+Dispatcher::_invoke() - APP/Cake/2.7.7/lib/Cake/Routing/Dispatcher.php, line 193
+Dispatcher::dispatch() - APP/Cake/2.7.7/lib/Cake/Routing/Dispatcher.php, line 167
+[main] - APP/webroot/index.php, line 86
+
+2016-12-07 13:21:10 Notice: Notice (8): Undefined index: semaforo in [/var/www/html/newsletter2/Model/Email.php, line 118]
+Trace:
+Email::afterSave() - APP/Model/Email.php, line 118
+CakeEventManager::dispatch() - APP/Cake/2.7.7/lib/Cake/Event/CakeEventManager.php, line 241
+Model::_doSave() - APP/Cake/2.7.7/lib/Cake/Model/Model.php, line 1961
+Model::save() - APP/Cake/2.7.7/lib/Cake/Model/Model.php, line 1751
+EmailsController::admin_edit() - APP/Controller/EmailsController.php, line 116
+ReflectionMethod::invokeArgs() - [internal], line ??
+Controller::invokeAction() - APP/Cake/2.7.7/lib/Cake/Controller/Controller.php, line 490
+Dispatcher::_invoke() - APP/Cake/2.7.7/lib/Cake/Routing/Dispatcher.php, line 193
+Dispatcher::dispatch() - APP/Cake/2.7.7/lib/Cake/Routing/Dispatcher.php, line 167
+[main] - APP/webroot/index.php, line 86
+
+2016-12-07 15:27:07 Notice: Notice (8): Undefined variable: email in [/var/www/html/newsletter2/View/Emails/admin_edit.ctp, line 72]
+Trace:
+include - APP/View/Emails/admin_edit.ctp, line 72
+View::_evaluate() - APP/Cake/2.7.7/lib/Cake/View/View.php, line 971
+View::_render() - APP/Cake/2.7.7/lib/Cake/View/View.php, line 933
+View::render() - APP/Cake/2.7.7/lib/Cake/View/View.php, line 473
+Controller::render() - APP/Cake/2.7.7/lib/Cake/Controller/Controller.php, line 960
+Dispatcher::_invoke() - APP/Cake/2.7.7/lib/Cake/Routing/Dispatcher.php, line 200
+Dispatcher::dispatch() - APP/Cake/2.7.7/lib/Cake/Routing/Dispatcher.php, line 167
+[main] - APP/webroot/index.php, line 86
+
+2016-12-07 15:29:06 Notice: Notice (8): Undefined variable: data in [/var/www/html/newsletter2/Controller/EmailsController.php, line 614]
+Trace:
+EmailsController::admin_generarHtml() - APP/Controller/EmailsController.php, line 614
+ReflectionMethod::invokeArgs() - [internal], line ??
+Controller::invokeAction() - APP/Cake/2.7.7/lib/Cake/Controller/Controller.php, line 490
+Dispatcher::_invoke() - APP/Cake/2.7.7/lib/Cake/Routing/Dispatcher.php, line 193
+Dispatcher::dispatch() - APP/Cake/2.7.7/lib/Cake/Routing/Dispatcher.php, line 167
+[main] - APP/webroot/index.php, line 86
+
+2016-12-07 15:29:06 Notice: Notice (8): Undefined index: semaforo in [/var/www/html/newsletter2/Model/Email.php, line 118]
+Trace:
+Email::afterSave() - APP/Model/Email.php, line 118
+CakeEventManager::dispatch() - APP/Cake/2.7.7/lib/Cake/Event/CakeEventManager.php, line 241
+Model::_doSave() - APP/Cake/2.7.7/lib/Cake/Model/Model.php, line 1961
+Model::save() - APP/Cake/2.7.7/lib/Cake/Model/Model.php, line 1751
+EmailsController::admin_generarHtml() - APP/Controller/EmailsController.php, line 614
+ReflectionMethod::invokeArgs() - [internal], line ??
+Controller::invokeAction() - APP/Cake/2.7.7/lib/Cake/Controller/Controller.php, line 490
+Dispatcher::_invoke() - APP/Cake/2.7.7/lib/Cake/Routing/Dispatcher.php, line 193
+Dispatcher::dispatch() - APP/Cake/2.7.7/lib/Cake/Routing/Dispatcher.php, line 167
+[main] - APP/webroot/index.php, line 86
+
+2016-12-07 15:29:06 Notice: Notice (8): Undefined index: plantilla_id in [/var/www/html/newsletter2/Model/Email.php, line 129]
+Trace:
+Email::afterSave() - APP/Model/Email.php, line 129
+CakeEventManager::dispatch() - APP/Cake/2.7.7/lib/Cake/Event/CakeEventManager.php, line 241
+Model::_doSave() - APP/Cake/2.7.7/lib/Cake/Model/Model.php, line 1961
+Model::save() - APP/Cake/2.7.7/lib/Cake/Model/Model.php, line 1751
+EmailsController::admin_generarHtml() - APP/Controller/EmailsController.php, line 614
+ReflectionMethod::invokeArgs() - [internal], line ??
+Controller::invokeAction() - APP/Cake/2.7.7/lib/Cake/Controller/Controller.php, line 490
+Dispatcher::_invoke() - APP/Cake/2.7.7/lib/Cake/Routing/Dispatcher.php, line 193
+Dispatcher::dispatch() - APP/Cake/2.7.7/lib/Cake/Routing/Dispatcher.php, line 167
+[main] - APP/webroot/index.php, line 86
+
+2016-12-07 15:29:25 Notice: Notice (8): Undefined index: semaforo in [/var/www/html/newsletter2/Model/Email.php, line 118]
+Trace:
+Email::afterSave() - APP/Model/Email.php, line 118
+CakeEventManager::dispatch() - APP/Cake/2.7.7/lib/Cake/Event/CakeEventManager.php, line 241
+Model::_doSave() - APP/Cake/2.7.7/lib/Cake/Model/Model.php, line 1961
+Model::save() - APP/Cake/2.7.7/lib/Cake/Model/Model.php, line 1751
+EmailsController::admin_edit() - APP/Controller/EmailsController.php, line 116
+ReflectionMethod::invokeArgs() - [internal], line ??
+Controller::invokeAction() - APP/Cake/2.7.7/lib/Cake/Controller/Controller.php, line 490
+Dispatcher::_invoke() - APP/Cake/2.7.7/lib/Cake/Routing/Dispatcher.php, line 193
+Dispatcher::dispatch() - APP/Cake/2.7.7/lib/Cake/Routing/Dispatcher.php, line 167
+[main] - APP/webroot/index.php, line 86
+
+2016-12-07 15:29:25 Notice: Notice (8): Undefined variable: data in [/var/www/html/newsletter2/Controller/EmailsController.php, line 614]
+Trace:
+EmailsController::admin_generarHtml() - APP/Controller/EmailsController.php, line 614
+ReflectionMethod::invokeArgs() - [internal], line ??
+Controller::invokeAction() - APP/Cake/2.7.7/lib/Cake/Controller/Controller.php, line 490
+Dispatcher::_invoke() - APP/Cake/2.7.7/lib/Cake/Routing/Dispatcher.php, line 193
+Dispatcher::dispatch() - APP/Cake/2.7.7/lib/Cake/Routing/Dispatcher.php, line 167
+[main] - APP/webroot/index.php, line 86
+
+2016-12-07 15:29:25 Notice: Notice (8): Undefined index: semaforo in [/var/www/html/newsletter2/Model/Email.php, line 118]
+Trace:
+Email::afterSave() - APP/Model/Email.php, line 118
+CakeEventManager::dispatch() - APP/Cake/2.7.7/lib/Cake/Event/CakeEventManager.php, line 241
+Model::_doSave() - APP/Cake/2.7.7/lib/Cake/Model/Model.php, line 1961
+Model::save() - APP/Cake/2.7.7/lib/Cake/Model/Model.php, line 1751
+EmailsController::admin_generarHtml() - APP/Controller/EmailsController.php, line 614
+ReflectionMethod::invokeArgs() - [internal], line ??
+Controller::invokeAction() - APP/Cake/2.7.7/lib/Cake/Controller/Controller.php, line 490
+Dispatcher::_invoke() - APP/Cake/2.7.7/lib/Cake/Routing/Dispatcher.php, line 193
+Dispatcher::dispatch() - APP/Cake/2.7.7/lib/Cake/Routing/Dispatcher.php, line 167
+[main] - APP/webroot/index.php, line 86
+
+2016-12-07 15:29:25 Notice: Notice (8): Undefined index: plantilla_id in [/var/www/html/newsletter2/Model/Email.php, line 129]
+Trace:
+Email::afterSave() - APP/Model/Email.php, line 129
+CakeEventManager::dispatch() - APP/Cake/2.7.7/lib/Cake/Event/CakeEventManager.php, line 241
+Model::_doSave() - APP/Cake/2.7.7/lib/Cake/Model/Model.php, line 1961
+Model::save() - APP/Cake/2.7.7/lib/Cake/Model/Model.php, line 1751
+EmailsController::admin_generarHtml() - APP/Controller/EmailsController.php, line 614
+ReflectionMethod::invokeArgs() - [internal], line ??
+Controller::invokeAction() - APP/Cake/2.7.7/lib/Cake/Controller/Controller.php, line 490
+Dispatcher::_invoke() - APP/Cake/2.7.7/lib/Cake/Routing/Dispatcher.php, line 193
+Dispatcher::dispatch() - APP/Cake/2.7.7/lib/Cake/Routing/Dispatcher.php, line 167
+[main] - APP/webroot/index.php, line 86
+
+2016-12-07 15:33:59 Notice: Notice (8): Undefined index: semaforo in [/var/www/html/newsletter2/Model/Email.php, line 118]
+Trace:
+Email::afterSave() - APP/Model/Email.php, line 118
+CakeEventManager::dispatch() - APP/Cake/2.7.7/lib/Cake/Event/CakeEventManager.php, line 241
+Model::_doSave() - APP/Cake/2.7.7/lib/Cake/Model/Model.php, line 1961
+Model::save() - APP/Cake/2.7.7/lib/Cake/Model/Model.php, line 1751
+EmailsController::admin_edit() - APP/Controller/EmailsController.php, line 116
+ReflectionMethod::invokeArgs() - [internal], line ??
+Controller::invokeAction() - APP/Cake/2.7.7/lib/Cake/Controller/Controller.php, line 490
+Dispatcher::_invoke() - APP/Cake/2.7.7/lib/Cake/Routing/Dispatcher.php, line 193
+Dispatcher::dispatch() - APP/Cake/2.7.7/lib/Cake/Routing/Dispatcher.php, line 167
+[main] - APP/webroot/index.php, line 86
+
+2016-12-07 15:34:00 Notice: Notice (8): Undefined variable: data in [/var/www/html/newsletter2/Controller/EmailsController.php, line 614]
+Trace:
+EmailsController::admin_generarHtml() - APP/Controller/EmailsController.php, line 614
+ReflectionMethod::invokeArgs() - [internal], line ??
+Controller::invokeAction() - APP/Cake/2.7.7/lib/Cake/Controller/Controller.php, line 490
+Dispatcher::_invoke() - APP/Cake/2.7.7/lib/Cake/Routing/Dispatcher.php, line 193
+Dispatcher::dispatch() - APP/Cake/2.7.7/lib/Cake/Routing/Dispatcher.php, line 167
+[main] - APP/webroot/index.php, line 86
+
+2016-12-07 15:34:00 Notice: Notice (8): Undefined index: semaforo in [/var/www/html/newsletter2/Model/Email.php, line 118]
+Trace:
+Email::afterSave() - APP/Model/Email.php, line 118
+CakeEventManager::dispatch() - APP/Cake/2.7.7/lib/Cake/Event/CakeEventManager.php, line 241
+Model::_doSave() - APP/Cake/2.7.7/lib/Cake/Model/Model.php, line 1961
+Model::save() - APP/Cake/2.7.7/lib/Cake/Model/Model.php, line 1751
+EmailsController::admin_generarHtml() - APP/Controller/EmailsController.php, line 614
+ReflectionMethod::invokeArgs() - [internal], line ??
+Controller::invokeAction() - APP/Cake/2.7.7/lib/Cake/Controller/Controller.php, line 490
+Dispatcher::_invoke() - APP/Cake/2.7.7/lib/Cake/Routing/Dispatcher.php, line 193
+Dispatcher::dispatch() - APP/Cake/2.7.7/lib/Cake/Routing/Dispatcher.php, line 167
+[main] - APP/webroot/index.php, line 86
+
+2016-12-07 15:34:00 Notice: Notice (8): Undefined index: plantilla_id in [/var/www/html/newsletter2/Model/Email.php, line 129]
+Trace:
+Email::afterSave() - APP/Model/Email.php, line 129
+CakeEventManager::dispatch() - APP/Cake/2.7.7/lib/Cake/Event/CakeEventManager.php, line 241
+Model::_doSave() - APP/Cake/2.7.7/lib/Cake/Model/Model.php, line 1961
+Model::save() - APP/Cake/2.7.7/lib/Cake/Model/Model.php, line 1751
+EmailsController::admin_generarHtml() - APP/Controller/EmailsController.php, line 614
+ReflectionMethod::invokeArgs() - [internal], line ??
+Controller::invokeAction() - APP/Cake/2.7.7/lib/Cake/Controller/Controller.php, line 490
+Dispatcher::_invoke() - APP/Cake/2.7.7/lib/Cake/Routing/Dispatcher.php, line 193
+Dispatcher::dispatch() - APP/Cake/2.7.7/lib/Cake/Routing/Dispatcher.php, line 167
+[main] - APP/webroot/index.php, line 86
+
+2016-12-07 15:34:19 Notice: Notice (8): Undefined index: semaforo in [/var/www/html/newsletter2/Model/Email.php, line 118]
+Trace:
+Email::afterSave() - APP/Model/Email.php, line 118
+CakeEventManager::dispatch() - APP/Cake/2.7.7/lib/Cake/Event/CakeEventManager.php, line 241
+Model::_doSave() - APP/Cake/2.7.7/lib/Cake/Model/Model.php, line 1961
+Model::save() - APP/Cake/2.7.7/lib/Cake/Model/Model.php, line 1751
+EmailsController::admin_edit() - APP/Controller/EmailsController.php, line 116
+ReflectionMethod::invokeArgs() - [internal], line ??
+Controller::invokeAction() - APP/Cake/2.7.7/lib/Cake/Controller/Controller.php, line 490
+Dispatcher::_invoke() - APP/Cake/2.7.7/lib/Cake/Routing/Dispatcher.php, line 193
+Dispatcher::dispatch() - APP/Cake/2.7.7/lib/Cake/Routing/Dispatcher.php, line 167
+[main] - APP/webroot/index.php, line 86
+
+2016-12-07 15:34:19 Notice: Notice (8): Undefined variable: data in [/var/www/html/newsletter2/Controller/EmailsController.php, line 614]
+Trace:
+EmailsController::admin_generarHtml() - APP/Controller/EmailsController.php, line 614
+ReflectionMethod::invokeArgs() - [internal], line ??
+Controller::invokeAction() - APP/Cake/2.7.7/lib/Cake/Controller/Controller.php, line 490
+Dispatcher::_invoke() - APP/Cake/2.7.7/lib/Cake/Routing/Dispatcher.php, line 193
+Dispatcher::dispatch() - APP/Cake/2.7.7/lib/Cake/Routing/Dispatcher.php, line 167
+[main] - APP/webroot/index.php, line 86
+
+2016-12-07 15:34:19 Notice: Notice (8): Undefined index: semaforo in [/var/www/html/newsletter2/Model/Email.php, line 118]
+Trace:
+Email::afterSave() - APP/Model/Email.php, line 118
+CakeEventManager::dispatch() - APP/Cake/2.7.7/lib/Cake/Event/CakeEventManager.php, line 241
+Model::_doSave() - APP/Cake/2.7.7/lib/Cake/Model/Model.php, line 1961
+Model::save() - APP/Cake/2.7.7/lib/Cake/Model/Model.php, line 1751
+EmailsController::admin_generarHtml() - APP/Controller/EmailsController.php, line 614
+ReflectionMethod::invokeArgs() - [internal], line ??
+Controller::invokeAction() - APP/Cake/2.7.7/lib/Cake/Controller/Controller.php, line 490
+Dispatcher::_invoke() - APP/Cake/2.7.7/lib/Cake/Routing/Dispatcher.php, line 193
+Dispatcher::dispatch() - APP/Cake/2.7.7/lib/Cake/Routing/Dispatcher.php, line 167
+[main] - APP/webroot/index.php, line 86
+
+2016-12-07 15:34:19 Notice: Notice (8): Undefined index: plantilla_id in [/var/www/html/newsletter2/Model/Email.php, line 129]
+Trace:
+Email::afterSave() - APP/Model/Email.php, line 129
+CakeEventManager::dispatch() - APP/Cake/2.7.7/lib/Cake/Event/CakeEventManager.php, line 241
+Model::_doSave() - APP/Cake/2.7.7/lib/Cake/Model/Model.php, line 1961
+Model::save() - APP/Cake/2.7.7/lib/Cake/Model/Model.php, line 1751
+EmailsController::admin_generarHtml() - APP/Controller/EmailsController.php, line 614
+ReflectionMethod::invokeArgs() - [internal], line ??
+Controller::invokeAction() - APP/Cake/2.7.7/lib/Cake/Controller/Controller.php, line 490
+Dispatcher::_invoke() - APP/Cake/2.7.7/lib/Cake/Routing/Dispatcher.php, line 193
+Dispatcher::dispatch() - APP/Cake/2.7.7/lib/Cake/Routing/Dispatcher.php, line 167
+[main] - APP/webroot/index.php, line 86
+
+2016-12-07 15:34:33 Notice: Notice (8): Undefined index: semaforo in [/var/www/html/newsletter2/Model/Email.php, line 118]
+Trace:
+Email::afterSave() - APP/Model/Email.php, line 118
+CakeEventManager::dispatch() - APP/Cake/2.7.7/lib/Cake/Event/CakeEventManager.php, line 241
+Model::_doSave() - APP/Cake/2.7.7/lib/Cake/Model/Model.php, line 1961
+Model::save() - APP/Cake/2.7.7/lib/Cake/Model/Model.php, line 1751
+EmailsController::admin_edit() - APP/Controller/EmailsController.php, line 116
+ReflectionMethod::invokeArgs() - [internal], line ??
+Controller::invokeAction() - APP/Cake/2.7.7/lib/Cake/Controller/Controller.php, line 490
+Dispatcher::_invoke() - APP/Cake/2.7.7/lib/Cake/Routing/Dispatcher.php, line 193
+Dispatcher::dispatch() - APP/Cake/2.7.7/lib/Cake/Routing/Dispatcher.php, line 167
+[main] - APP/webroot/index.php, line 86
+
+2016-12-07 15:34:33 Notice: Notice (8): Undefined variable: data in [/var/www/html/newsletter2/Controller/EmailsController.php, line 614]
+Trace:
+EmailsController::admin_generarHtml() - APP/Controller/EmailsController.php, line 614
+ReflectionMethod::invokeArgs() - [internal], line ??
+Controller::invokeAction() - APP/Cake/2.7.7/lib/Cake/Controller/Controller.php, line 490
+Dispatcher::_invoke() - APP/Cake/2.7.7/lib/Cake/Routing/Dispatcher.php, line 193
+Dispatcher::dispatch() - APP/Cake/2.7.7/lib/Cake/Routing/Dispatcher.php, line 167
+[main] - APP/webroot/index.php, line 86
+
+2016-12-07 15:34:33 Notice: Notice (8): Undefined index: semaforo in [/var/www/html/newsletter2/Model/Email.php, line 118]
+Trace:
+Email::afterSave() - APP/Model/Email.php, line 118
+CakeEventManager::dispatch() - APP/Cake/2.7.7/lib/Cake/Event/CakeEventManager.php, line 241
+Model::_doSave() - APP/Cake/2.7.7/lib/Cake/Model/Model.php, line 1961
+Model::save() - APP/Cake/2.7.7/lib/Cake/Model/Model.php, line 1751
+EmailsController::admin_generarHtml() - APP/Controller/EmailsController.php, line 614
+ReflectionMethod::invokeArgs() - [internal], line ??
+Controller::invokeAction() - APP/Cake/2.7.7/lib/Cake/Controller/Controller.php, line 490
+Dispatcher::_invoke() - APP/Cake/2.7.7/lib/Cake/Routing/Dispatcher.php, line 193
+Dispatcher::dispatch() - APP/Cake/2.7.7/lib/Cake/Routing/Dispatcher.php, line 167
+[main] - APP/webroot/index.php, line 86
+
+2016-12-07 15:34:33 Notice: Notice (8): Undefined index: plantilla_id in [/var/www/html/newsletter2/Model/Email.php, line 129]
+Trace:
+Email::afterSave() - APP/Model/Email.php, line 129
+CakeEventManager::dispatch() - APP/Cake/2.7.7/lib/Cake/Event/CakeEventManager.php, line 241
+Model::_doSave() - APP/Cake/2.7.7/lib/Cake/Model/Model.php, line 1961
+Model::save() - APP/Cake/2.7.7/lib/Cake/Model/Model.php, line 1751
+EmailsController::admin_generarHtml() - APP/Controller/EmailsController.php, line 614
+ReflectionMethod::invokeArgs() - [internal], line ??
+Controller::invokeAction() - APP/Cake/2.7.7/lib/Cake/Controller/Controller.php, line 490
+Dispatcher::_invoke() - APP/Cake/2.7.7/lib/Cake/Routing/Dispatcher.php, line 193
+Dispatcher::dispatch() - APP/Cake/2.7.7/lib/Cake/Routing/Dispatcher.php, line 167
+[main] - APP/webroot/index.php, line 86
+
+2016-12-07 15:34:55 Notice: Notice (8): Undefined index: semaforo in [/var/www/html/newsletter2/Model/Email.php, line 118]
+Trace:
+Email::afterSave() - APP/Model/Email.php, line 118
+CakeEventManager::dispatch() - APP/Cake/2.7.7/lib/Cake/Event/CakeEventManager.php, line 241
+Model::_doSave() - APP/Cake/2.7.7/lib/Cake/Model/Model.php, line 1961
+Model::save() - APP/Cake/2.7.7/lib/Cake/Model/Model.php, line 1751
+Model::saveField() - APP/Cake/2.7.7/lib/Cake/Model/Model.php, line 1703
+EmailsController::admin_desactivar() - APP/Controller/EmailsController.php, line 248
+ReflectionMethod::invokeArgs() - [internal], line ??
+Controller::invokeAction() - APP/Cake/2.7.7/lib/Cake/Controller/Controller.php, line 490
+Dispatcher::_invoke() - APP/Cake/2.7.7/lib/Cake/Routing/Dispatcher.php, line 193
+Dispatcher::dispatch() - APP/Cake/2.7.7/lib/Cake/Routing/Dispatcher.php, line 167
+[main] - APP/webroot/index.php, line 86
+
+2016-12-07 15:34:55 Notice: Notice (8): Undefined index: plantilla_id in [/var/www/html/newsletter2/Model/Email.php, line 129]
+Trace:
+Email::afterSave() - APP/Model/Email.php, line 129
+CakeEventManager::dispatch() - APP/Cake/2.7.7/lib/Cake/Event/CakeEventManager.php, line 241
+Model::_doSave() - APP/Cake/2.7.7/lib/Cake/Model/Model.php, line 1961
+Model::save() - APP/Cake/2.7.7/lib/Cake/Model/Model.php, line 1751
+Model::saveField() - APP/Cake/2.7.7/lib/Cake/Model/Model.php, line 1703
+EmailsController::admin_desactivar() - APP/Controller/EmailsController.php, line 248
+ReflectionMethod::invokeArgs() - [internal], line ??
+Controller::invokeAction() - APP/Cake/2.7.7/lib/Cake/Controller/Controller.php, line 490
+Dispatcher::_invoke() - APP/Cake/2.7.7/lib/Cake/Routing/Dispatcher.php, line 193
+Dispatcher::dispatch() - APP/Cake/2.7.7/lib/Cake/Routing/Dispatcher.php, line 167
+[main] - APP/webroot/index.php, line 86
+
+2016-12-07 15:34:58 Notice: Notice (8): Undefined index: semaforo in [/var/www/html/newsletter2/Model/Email.php, line 118]
+Trace:
+Email::afterSave() - APP/Model/Email.php, line 118
+CakeEventManager::dispatch() - APP/Cake/2.7.7/lib/Cake/Event/CakeEventManager.php, line 241
+Model::_doSave() - APP/Cake/2.7.7/lib/Cake/Model/Model.php, line 1961
+Model::save() - APP/Cake/2.7.7/lib/Cake/Model/Model.php, line 1751
+Model::saveField() - APP/Cake/2.7.7/lib/Cake/Model/Model.php, line 1703
+EmailsController::admin_desactivar() - APP/Controller/EmailsController.php, line 248
+ReflectionMethod::invokeArgs() - [internal], line ??
+Controller::invokeAction() - APP/Cake/2.7.7/lib/Cake/Controller/Controller.php, line 490
+Dispatcher::_invoke() - APP/Cake/2.7.7/lib/Cake/Routing/Dispatcher.php, line 193
+Dispatcher::dispatch() - APP/Cake/2.7.7/lib/Cake/Routing/Dispatcher.php, line 167
+[main] - APP/webroot/index.php, line 86
+
+2016-12-07 15:34:58 Notice: Notice (8): Undefined index: plantilla_id in [/var/www/html/newsletter2/Model/Email.php, line 129]
+Trace:
+Email::afterSave() - APP/Model/Email.php, line 129
+CakeEventManager::dispatch() - APP/Cake/2.7.7/lib/Cake/Event/CakeEventManager.php, line 241
+Model::_doSave() - APP/Cake/2.7.7/lib/Cake/Model/Model.php, line 1961
+Model::save() - APP/Cake/2.7.7/lib/Cake/Model/Model.php, line 1751
+Model::saveField() - APP/Cake/2.7.7/lib/Cake/Model/Model.php, line 1703
+EmailsController::admin_desactivar() - APP/Controller/EmailsController.php, line 248
+ReflectionMethod::invokeArgs() - [internal], line ??
+Controller::invokeAction() - APP/Cake/2.7.7/lib/Cake/Controller/Controller.php, line 490
+Dispatcher::_invoke() - APP/Cake/2.7.7/lib/Cake/Routing/Dispatcher.php, line 193
+Dispatcher::dispatch() - APP/Cake/2.7.7/lib/Cake/Routing/Dispatcher.php, line 167
+[main] - APP/webroot/index.php, line 86
+
