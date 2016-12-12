@@ -47,7 +47,7 @@ if ( Configure::read('debug') > 0 )
 /**
  * Cambiar a prefijo unico por proyecto
  */
-$prefix		= 'codecl_';
+$prefix		= 'news_';
 
 /**
  * Configuracion general del cache

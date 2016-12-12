@@ -7,7 +7,7 @@
 		<div class="col-xs-12">
 			<div class="panel panel-default">
 				<div class="panel-heading">
-					<h3 class="panel-title">Listado de Categorias</h3>
+					<h3 class="panel-title">Listado de Categorías</h3>
 					<div class="btn-group pull-right">
 						<?= $this->Html->link('<i class="fa fa-plus"></i> Nueva Categoria', array('action' => 'add'), array('class' => 'btn btn-success', 'escape' => false)); ?>
 						<?= $this->Html->link('<i class="fa fa-file-excel-o"></i> Exportar a Excel', array('action' => 'exportar'), array('class' => 'btn btn-primary', 'escape' => false)); ?>
@@ -42,6 +42,7 @@
 										<? }else{ ?>
 											<?= $this->Form->postLink('<i class="fa fa-eye"></i> Activar', array('action' => 'activar', $categoria['Categoria']['id']), array('class' => 'btn btn-primary btn-xs', 'rel' => 'tooltip', 'title' => 'Activar este registro', 'escape' => false)); ?>
 										<?	} ?>
+										<?= $this->Form->postLink('<i class="fa fa-trash"></i> Eliminar', array('action' => 'delete', $categoria['Categoria']['id']), array('class' => 'btn btn-danger btn-xs', 'rel' => 'tooltip', 'title' => 'Eliminar este registro', 'escape' => false)); ?>
 									<? endif; ?>
 									</td>
 								</tr>

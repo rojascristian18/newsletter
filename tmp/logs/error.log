@@ -743,3 +743,23 @@ Stack Trace:
 #10 /var/www/html/newsletter/Cake/2.7.7/lib/Cake/Routing/Dispatcher.php(167): Dispatcher->_invoke(Object(CategoriasController), Object(CakeRequest))
 #11 /var/www/html/newsletter/webroot/index.php(86): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
 #12 {main}
+2016-12-12 10:02:53 Error: [MissingActionException] Action ToolmaniasController::admin_exportar() could not be found.
+Exception Attributes: array (
+  'controller' => 'ToolmaniasController',
+  'action' => 'admin_exportar',
+)
+Request URL: /toolmanias/exportar
+Stack Trace:
+#0 /var/www/html/newsletter/Cake/2.7.7/lib/Cake/Routing/Dispatcher.php(193): Controller->invokeAction(Object(CakeRequest))
+#1 /var/www/html/newsletter/Cake/2.7.7/lib/Cake/Routing/Dispatcher.php(167): Dispatcher->_invoke(Object(ToolmaniasController), Object(CakeRequest))
+#2 /var/www/html/newsletter/webroot/index.php(86): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#3 {main}
+2016-12-12 10:04:30 Error: [MissingControllerException] Controller class ImgController could not be found.
+Exception Attributes: array (
+  'class' => 'ImgController',
+  'plugin' => NULL,
+)
+Request URL: /img/Producto/1/mini_1276fcaf7eb650a67425b81aa247dada69ade5aa_botones_toolmanianuevo_sitio11.jpg
+Stack Trace:
+#0 /var/www/html/newsletter/webroot/index.php(86): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#1 {main}

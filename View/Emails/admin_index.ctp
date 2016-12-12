@@ -62,6 +62,7 @@
 										<? }else{ ?>
 											<?= $this->Form->postLink('<i class="fa fa-eye"></i> Activar', array('action' => 'activar', $email['Email']['id']), array('class' => 'btn btn-primary btn-xs', 'rel' => 'tooltip', 'title' => 'Activar este registro', 'escape' => false)); ?>
 										<?	} ?>
+										<?= $this->Form->postLink('<i class="fa fa-trash"></i> Eliminar', array('action' => 'delete', $email['Email']['id']), array('class' => 'btn btn-danger btn-xs', 'rel' => 'tooltip', 'title' => 'Eliminar este registro', 'escape' => false)); ?>
 									<? endif; ?>
 									</td>
 								</tr>
