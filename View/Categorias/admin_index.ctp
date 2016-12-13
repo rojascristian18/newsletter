@@ -15,7 +15,7 @@
 				</div>
 				<div class="panel-body">
 					<div class="table-responsive">
-						<table class="table datatable">
+						<table class="table">
 							<thead>
 								<tr class="sort">
 									<th><?= $this->Paginator->sort('nombre', null, array('title' => 'Haz click para ordenar por este criterio')); ?></th>
