@@ -72,7 +72,7 @@ class ToolmaniasController extends AppController {
 					case 'code':
 						$paginate		= array_replace_recursive($paginate, array(
 							'conditions'	=> array(
-								'Toolmania.reference' => $this->request->data['Toolmania']['nombre_buscar']
+								'Toolmania.reference' => trim($this->request->data['Toolmania']['nombre_buscar'])
 							)
 						));
 						break;
@@ -80,7 +80,7 @@ class ToolmaniasController extends AppController {
 					case 'name':
 						$paginate		= array_replace_recursive($paginate, array(
 							'conditions'	=> array(
-								'pl.name LIKE "%' . $this->request->data['Toolmania']['nombre_buscar'] . '%"'
+								'pl.name LIKE "%' . trim($this->request->data['Toolmania']['nombre_buscar']) . '%"'
 							)
 						));
 						break;

@@ -763,3 +763,392 @@ Request URL: /img/Producto/1/mini_1276fcaf7eb650a67425b81aa247dada69ade5aa_boton
 Stack Trace:
 #0 /var/www/html/newsletter/webroot/index.php(86): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
 #1 {main}
+2016-12-12 10:14:33 Warning: Warning (2): include_once(C:\wamp64\www\newsletter\Config\database.php): failed to open stream: No such file or directory in [C:\wamp64\www\newsletter\Cake\2.7.7\lib\Cake\Model\ConnectionManager.php, line 67]
+Trace:
+ConnectionManager::_init() - APP\Cake\2.7.7\lib\Cake\Model\ConnectionManager.php, line 67
+ConnectionManager::_init() - APP\Cake\2.7.7\lib\Cake\Model\ConnectionManager.php, line 67
+ConnectionManager::getDataSource() - APP\Cake\2.7.7\lib\Cake\Model\ConnectionManager.php, line 83
+Model::setDataSource() - APP\Cake\2.7.7\lib\Cake\Model\Model.php, line 3626
+Model::setSource() - APP\Cake\2.7.7\lib\Cake\Model\Model.php, line 1155
+Model::getDataSource() - APP\Cake\2.7.7\lib\Cake\Model\Model.php, line 3653
+Model::_readDataSource() - APP\Cake\2.7.7\lib\Cake\Model\Model.php, line 3031
+Model::find() - APP\Cake\2.7.7\lib\Cake\Model\Model.php, line 3003
+AppController::obtenerAvatar() - APP\Controller\AppController.php, line 153
+AppController::beforeRender() - APP\Controller\AppController.php, line 134
+call_user_func - [internal], line ??
+CakeEventManager::dispatch() - APP\Cake\2.7.7\lib\Cake\Event\CakeEventManager.php, line 243
+Controller::render() - APP\Cake\2.7.7\lib\Cake\Controller\Controller.php, line 933
+Dispatcher::_invoke() - APP\Cake\2.7.7\lib\Cake\Routing\Dispatcher.php, line 200
+Dispatcher::dispatch() - APP\Cake\2.7.7\lib\Cake\Routing\Dispatcher.php, line 167
+[main] - APP\webroot\index.php, line 86
+
+2016-12-12 10:14:33 Warning: Warning (2): include_once() [<a href='http://php.net/function.include'>function.include</a>]: Failed opening 'C:\wamp64\www\newsletter\Config\database.php' for inclusion (include_path='.;C:\php\pear') in [C:\wamp64\www\newsletter\Cake\2.7.7\lib\Cake\Model\ConnectionManager.php, line 67]
+Trace:
+ConnectionManager::_init() - APP\Cake\2.7.7\lib\Cake\Model\ConnectionManager.php, line 67
+ConnectionManager::_init() - APP\Cake\2.7.7\lib\Cake\Model\ConnectionManager.php, line 67
+ConnectionManager::getDataSource() - APP\Cake\2.7.7\lib\Cake\Model\ConnectionManager.php, line 83
+Model::setDataSource() - APP\Cake\2.7.7\lib\Cake\Model\Model.php, line 3626
+Model::setSource() - APP\Cake\2.7.7\lib\Cake\Model\Model.php, line 1155
+Model::getDataSource() - APP\Cake\2.7.7\lib\Cake\Model\Model.php, line 3653
+Model::_readDataSource() - APP\Cake\2.7.7\lib\Cake\Model\Model.php, line 3031
+Model::find() - APP\Cake\2.7.7\lib\Cake\Model\Model.php, line 3003
+AppController::obtenerAvatar() - APP\Controller\AppController.php, line 153
+AppController::beforeRender() - APP\Controller\AppController.php, line 134
+call_user_func - [internal], line ??
+CakeEventManager::dispatch() - APP\Cake\2.7.7\lib\Cake\Event\CakeEventManager.php, line 243
+Controller::render() - APP\Cake\2.7.7\lib\Cake\Controller\Controller.php, line 933
+Dispatcher::_invoke() - APP\Cake\2.7.7\lib\Cake\Routing\Dispatcher.php, line 200
+Dispatcher::dispatch() - APP\Cake\2.7.7\lib\Cake\Routing\Dispatcher.php, line 167
+[main] - APP\webroot\index.php, line 86
+
+2016-12-12 10:14:33 Error: [MissingDatasourceConfigException] The datasource configuration "default" was not found in database.php
+Exception Attributes: array (
+  'config' => 'default',
+)
+Request URL: /newsletter/login
+Stack Trace:
+#0 C:\wamp64\www\newsletter\Cake\2.7.7\lib\Cake\Model\ConnectionManager.php(91): ConnectionManager::_getConnectionObject('default')
+#1 C:\wamp64\www\newsletter\Cake\2.7.7\lib\Cake\Model\Model.php(3626): ConnectionManager::getDataSource('default')
+#2 C:\wamp64\www\newsletter\Cake\2.7.7\lib\Cake\Model\Model.php(1155): Model->setDataSource('default')
+#3 C:\wamp64\www\newsletter\Cake\2.7.7\lib\Cake\Model\Model.php(3653): Model->setSource('administradores')
+#4 C:\wamp64\www\newsletter\Cake\2.7.7\lib\Cake\Model\Model.php(3031): Model->getDataSource()
+#5 C:\wamp64\www\newsletter\Cake\2.7.7\lib\Cake\Model\Model.php(3003): Model->_readDataSource('first', Array)
+#6 C:\wamp64\www\newsletter\Controller\AppController.php(153): Model->find('first', Array)
+#7 C:\wamp64\www\newsletter\Controller\AppController.php(134): AppController->obtenerAvatar()
+#8 [internal function]: AppController->beforeRender(Object(CakeEvent))
+#9 C:\wamp64\www\newsletter\Cake\2.7.7\lib\Cake\Event\CakeEventManager.php(243): call_user_func(Array, Object(CakeEvent))
+#10 C:\wamp64\www\newsletter\Cake\2.7.7\lib\Cake\Controller\Controller.php(933): CakeEventManager->dispatch(Object(CakeEvent))
+#11 C:\wamp64\www\newsletter\Cake\2.7.7\lib\Cake\Routing\Dispatcher.php(200): Controller->render()
+#12 C:\wamp64\www\newsletter\Cake\2.7.7\lib\Cake\Routing\Dispatcher.php(167): Dispatcher->_invoke(Object(AdministradoresController), Object(CakeRequest))
+#13 C:\wamp64\www\newsletter\webroot\index.php(86): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#14 {main}
+2016-12-12 10:14:33 Error: [MissingControllerException] Controller class ImgController could not be found.
+Exception Attributes: array (
+  'class' => 'ImgController',
+  'plugin' => NULL,
+)
+Request URL: /newsletter/img/cake.power.gif
+Stack Trace:
+#0 C:\wamp64\www\newsletter\webroot\index.php(86): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#1 {main}
+2016-12-12 10:14:33 Warning: Warning (2): include_once(C:\wamp64\www\newsletter\Config\database.php): failed to open stream: No such file or directory in [C:\wamp64\www\newsletter\Cake\2.7.7\lib\Cake\Model\ConnectionManager.php, line 67]
+Trace:
+ConnectionManager::_init() - APP\Cake\2.7.7\lib\Cake\Model\ConnectionManager.php, line 67
+ConnectionManager::_init() - APP\Cake\2.7.7\lib\Cake\Model\ConnectionManager.php, line 67
+ConnectionManager::getDataSource() - APP\Cake\2.7.7\lib\Cake\Model\ConnectionManager.php, line 83
+Model::setDataSource() - APP\Cake\2.7.7\lib\Cake\Model\Model.php, line 3626
+Model::setSource() - APP\Cake\2.7.7\lib\Cake\Model\Model.php, line 1155
+Model::getDataSource() - APP\Cake\2.7.7\lib\Cake\Model\Model.php, line 3653
+Model::_readDataSource() - APP\Cake\2.7.7\lib\Cake\Model\Model.php, line 3031
+Model::find() - APP\Cake\2.7.7\lib\Cake\Model\Model.php, line 3003
+AppController::obtenerAvatar() - APP\Controller\AppController.php, line 153
+AppController::beforeRender() - APP\Controller\AppController.php, line 134
+call_user_func - [internal], line ??
+CakeEventManager::dispatch() - APP\Cake\2.7.7\lib\Cake\Event\CakeEventManager.php, line 243
+Controller::render() - APP\Cake\2.7.7\lib\Cake\Controller\Controller.php, line 933
+ExceptionRenderer::_outputMessage() - APP\Cake\2.7.7\lib\Cake\Error\ExceptionRenderer.php, line 289
+ExceptionRenderer::error400() - APP\Cake\2.7.7\lib\Cake\Error\ExceptionRenderer.php, line 233
+ExceptionRenderer::render() - APP\Cake\2.7.7\lib\Cake\Error\ExceptionRenderer.php, line 187
+ErrorHandler::handleException() - APP\Cake\2.7.7\lib\Cake\Error\ErrorHandler.php, line 127
+[main] - [internal], line ??
+
+2016-12-12 10:14:33 Warning: Warning (2): include_once() [<a href='http://php.net/function.include'>function.include</a>]: Failed opening 'C:\wamp64\www\newsletter\Config\database.php' for inclusion (include_path='.;C:\php\pear') in [C:\wamp64\www\newsletter\Cake\2.7.7\lib\Cake\Model\ConnectionManager.php, line 67]
+Trace:
+ConnectionManager::_init() - APP\Cake\2.7.7\lib\Cake\Model\ConnectionManager.php, line 67
+ConnectionManager::_init() - APP\Cake\2.7.7\lib\Cake\Model\ConnectionManager.php, line 67
+ConnectionManager::getDataSource() - APP\Cake\2.7.7\lib\Cake\Model\ConnectionManager.php, line 83
+Model::setDataSource() - APP\Cake\2.7.7\lib\Cake\Model\Model.php, line 3626
+Model::setSource() - APP\Cake\2.7.7\lib\Cake\Model\Model.php, line 1155
+Model::getDataSource() - APP\Cake\2.7.7\lib\Cake\Model\Model.php, line 3653
+Model::_readDataSource() - APP\Cake\2.7.7\lib\Cake\Model\Model.php, line 3031
+Model::find() - APP\Cake\2.7.7\lib\Cake\Model\Model.php, line 3003
+AppController::obtenerAvatar() - APP\Controller\AppController.php, line 153
+AppController::beforeRender() - APP\Controller\AppController.php, line 134
+call_user_func - [internal], line ??
+CakeEventManager::dispatch() - APP\Cake\2.7.7\lib\Cake\Event\CakeEventManager.php, line 243
+Controller::render() - APP\Cake\2.7.7\lib\Cake\Controller\Controller.php, line 933
+ExceptionRenderer::_outputMessage() - APP\Cake\2.7.7\lib\Cake\Error\ExceptionRenderer.php, line 289
+ExceptionRenderer::error400() - APP\Cake\2.7.7\lib\Cake\Error\ExceptionRenderer.php, line 233
+ExceptionRenderer::render() - APP\Cake\2.7.7\lib\Cake\Error\ExceptionRenderer.php, line 187
+ErrorHandler::handleException() - APP\Cake\2.7.7\lib\Cake\Error\ErrorHandler.php, line 127
+[main] - [internal], line ??
+
+2016-12-12 10:14:33 Error: [MissingControllerException] Controller class CssController could not be found.
+Exception Attributes: array (
+  'class' => 'CssController',
+  'plugin' => NULL,
+)
+Request URL: /newsletter/css/cake.generic.css
+Stack Trace:
+#0 C:\wamp64\www\newsletter\webroot\index.php(86): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#1 {main}
+2016-12-12 10:14:33 Warning: Warning (2): include_once(C:\wamp64\www\newsletter\Config\database.php): failed to open stream: No such file or directory in [C:\wamp64\www\newsletter\Cake\2.7.7\lib\Cake\Model\ConnectionManager.php, line 67]
+Trace:
+ConnectionManager::_init() - APP\Cake\2.7.7\lib\Cake\Model\ConnectionManager.php, line 67
+ConnectionManager::_init() - APP\Cake\2.7.7\lib\Cake\Model\ConnectionManager.php, line 67
+ConnectionManager::getDataSource() - APP\Cake\2.7.7\lib\Cake\Model\ConnectionManager.php, line 83
+Model::setDataSource() - APP\Cake\2.7.7\lib\Cake\Model\Model.php, line 3626
+Model::setSource() - APP\Cake\2.7.7\lib\Cake\Model\Model.php, line 1155
+Model::getDataSource() - APP\Cake\2.7.7\lib\Cake\Model\Model.php, line 3653
+Model::_readDataSource() - APP\Cake\2.7.7\lib\Cake\Model\Model.php, line 3031
+Model::find() - APP\Cake\2.7.7\lib\Cake\Model\Model.php, line 3003
+AppController::obtenerAvatar() - APP\Controller\AppController.php, line 153
+AppController::beforeRender() - APP\Controller\AppController.php, line 134
+call_user_func - [internal], line ??
+CakeEventManager::dispatch() - APP\Cake\2.7.7\lib\Cake\Event\CakeEventManager.php, line 243
+Controller::render() - APP\Cake\2.7.7\lib\Cake\Controller\Controller.php, line 933
+ExceptionRenderer::_outputMessage() - APP\Cake\2.7.7\lib\Cake\Error\ExceptionRenderer.php, line 289
+ExceptionRenderer::error400() - APP\Cake\2.7.7\lib\Cake\Error\ExceptionRenderer.php, line 233
+ExceptionRenderer::render() - APP\Cake\2.7.7\lib\Cake\Error\ExceptionRenderer.php, line 187
+ErrorHandler::handleException() - APP\Cake\2.7.7\lib\Cake\Error\ErrorHandler.php, line 127
+[main] - [internal], line ??
+
+2016-12-12 10:14:33 Warning: Warning (2): include_once() [<a href='http://php.net/function.include'>function.include</a>]: Failed opening 'C:\wamp64\www\newsletter\Config\database.php' for inclusion (include_path='.;C:\php\pear') in [C:\wamp64\www\newsletter\Cake\2.7.7\lib\Cake\Model\ConnectionManager.php, line 67]
+Trace:
+ConnectionManager::_init() - APP\Cake\2.7.7\lib\Cake\Model\ConnectionManager.php, line 67
+ConnectionManager::_init() - APP\Cake\2.7.7\lib\Cake\Model\ConnectionManager.php, line 67
+ConnectionManager::getDataSource() - APP\Cake\2.7.7\lib\Cake\Model\ConnectionManager.php, line 83
+Model::setDataSource() - APP\Cake\2.7.7\lib\Cake\Model\Model.php, line 3626
+Model::setSource() - APP\Cake\2.7.7\lib\Cake\Model\Model.php, line 1155
+Model::getDataSource() - APP\Cake\2.7.7\lib\Cake\Model\Model.php, line 3653
+Model::_readDataSource() - APP\Cake\2.7.7\lib\Cake\Model\Model.php, line 3031
+Model::find() - APP\Cake\2.7.7\lib\Cake\Model\Model.php, line 3003
+AppController::obtenerAvatar() - APP\Controller\AppController.php, line 153
+AppController::beforeRender() - APP\Controller\AppController.php, line 134
+call_user_func - [internal], line ??
+CakeEventManager::dispatch() - APP\Cake\2.7.7\lib\Cake\Event\CakeEventManager.php, line 243
+Controller::render() - APP\Cake\2.7.7\lib\Cake\Controller\Controller.php, line 933
+ExceptionRenderer::_outputMessage() - APP\Cake\2.7.7\lib\Cake\Error\ExceptionRenderer.php, line 289
+ExceptionRenderer::error400() - APP\Cake\2.7.7\lib\Cake\Error\ExceptionRenderer.php, line 233
+ExceptionRenderer::render() - APP\Cake\2.7.7\lib\Cake\Error\ExceptionRenderer.php, line 187
+ErrorHandler::handleException() - APP\Cake\2.7.7\lib\Cake\Error\ErrorHandler.php, line 127
+[main] - [internal], line ??
+
+2016-12-12 10:15:53 Error: [MissingConnectionException] Database connection "Mysql" is missing, or could not be created.
+Exception Attributes: array (
+  'class' => 'Mysql',
+  'message' => 'SQLSTATE[HY000] [1045] Access denied for user \'\'@\'localhost\' (using password: NO)',
+  'enabled' => true,
+)
+Request URL: /newsletter/login
+Stack Trace:
+#0 C:\wamp64\www\newsletter\Cake\2.7.7\lib\Cake\Model\Datasource\DboSource.php(260): Mysql->connect()
+#1 C:\wamp64\www\newsletter\Cake\2.7.7\lib\Cake\Model\ConnectionManager.php(105): DboSource->__construct(Array)
+#2 C:\wamp64\www\newsletter\Cake\2.7.7\lib\Cake\Model\Model.php(3626): ConnectionManager::getDataSource('default')
+#3 C:\wamp64\www\newsletter\Cake\2.7.7\lib\Cake\Model\Model.php(1155): Model->setDataSource('default')
+#4 C:\wamp64\www\newsletter\Cake\2.7.7\lib\Cake\Model\Model.php(3653): Model->setSource('administradores')
+#5 C:\wamp64\www\newsletter\Cake\2.7.7\lib\Cake\Model\Model.php(3031): Model->getDataSource()
+#6 C:\wamp64\www\newsletter\Cake\2.7.7\lib\Cake\Model\Model.php(3003): Model->_readDataSource('first', Array)
+#7 C:\wamp64\www\newsletter\Controller\AppController.php(153): Model->find('first', Array)
+#8 C:\wamp64\www\newsletter\Controller\AppController.php(134): AppController->obtenerAvatar()
+#9 [internal function]: AppController->beforeRender(Object(CakeEvent))
+#10 C:\wamp64\www\newsletter\Cake\2.7.7\lib\Cake\Event\CakeEventManager.php(243): call_user_func(Array, Object(CakeEvent))
+#11 C:\wamp64\www\newsletter\Cake\2.7.7\lib\Cake\Controller\Controller.php(933): CakeEventManager->dispatch(Object(CakeEvent))
+#12 C:\wamp64\www\newsletter\Cake\2.7.7\lib\Cake\Routing\Dispatcher.php(200): Controller->render()
+#13 C:\wamp64\www\newsletter\Cake\2.7.7\lib\Cake\Routing\Dispatcher.php(167): Dispatcher->_invoke(Object(AdministradoresController), Object(CakeRequest))
+#14 C:\wamp64\www\newsletter\webroot\index.php(86): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#15 {main}
+2016-12-12 10:15:53 Error: [MissingControllerException] Controller class CssController could not be found.
+Exception Attributes: array (
+  'class' => 'CssController',
+  'plugin' => NULL,
+)
+Request URL: /newsletter/css/cake.generic.css
+Stack Trace:
+#0 C:\wamp64\www\newsletter\webroot\index.php(86): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#1 {main}
+2016-12-12 10:15:53 Error: [MissingControllerException] Controller class ImgController could not be found.
+Exception Attributes: array (
+  'class' => 'ImgController',
+  'plugin' => NULL,
+)
+Request URL: /newsletter/img/cake.power.gif
+Stack Trace:
+#0 C:\wamp64\www\newsletter\webroot\index.php(86): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#1 {main}
+2016-12-12 10:15:55 Error: [MissingConnectionException] Database connection "Mysql" is missing, or could not be created.
+Exception Attributes: array (
+  'class' => 'Mysql',
+  'message' => 'SQLSTATE[HY000] [1045] Access denied for user \'\'@\'localhost\' (using password: NO)',
+  'enabled' => true,
+)
+Request URL: /newsletter/login
+Stack Trace:
+#0 C:\wamp64\www\newsletter\Cake\2.7.7\lib\Cake\Model\Datasource\DboSource.php(260): Mysql->connect()
+#1 C:\wamp64\www\newsletter\Cake\2.7.7\lib\Cake\Model\ConnectionManager.php(105): DboSource->__construct(Array)
+#2 C:\wamp64\www\newsletter\Cake\2.7.7\lib\Cake\Model\Model.php(3626): ConnectionManager::getDataSource('default')
+#3 C:\wamp64\www\newsletter\Cake\2.7.7\lib\Cake\Model\Model.php(1155): Model->setDataSource('default')
+#4 C:\wamp64\www\newsletter\Cake\2.7.7\lib\Cake\Model\Model.php(3653): Model->setSource('administradores')
+#5 C:\wamp64\www\newsletter\Cake\2.7.7\lib\Cake\Model\Model.php(3031): Model->getDataSource()
+#6 C:\wamp64\www\newsletter\Cake\2.7.7\lib\Cake\Model\Model.php(3003): Model->_readDataSource('first', Array)
+#7 C:\wamp64\www\newsletter\Controller\AppController.php(153): Model->find('first', Array)
+#8 C:\wamp64\www\newsletter\Controller\AppController.php(134): AppController->obtenerAvatar()
+#9 [internal function]: AppController->beforeRender(Object(CakeEvent))
+#10 C:\wamp64\www\newsletter\Cake\2.7.7\lib\Cake\Event\CakeEventManager.php(243): call_user_func(Array, Object(CakeEvent))
+#11 C:\wamp64\www\newsletter\Cake\2.7.7\lib\Cake\Controller\Controller.php(933): CakeEventManager->dispatch(Object(CakeEvent))
+#12 C:\wamp64\www\newsletter\Cake\2.7.7\lib\Cake\Routing\Dispatcher.php(200): Controller->render()
+#13 C:\wamp64\www\newsletter\Cake\2.7.7\lib\Cake\Routing\Dispatcher.php(167): Dispatcher->_invoke(Object(AdministradoresController), Object(CakeRequest))
+#14 C:\wamp64\www\newsletter\webroot\index.php(86): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#15 {main}
+2016-12-12 10:15:55 Error: [MissingControllerException] Controller class CssController could not be found.
+Exception Attributes: array (
+  'class' => 'CssController',
+  'plugin' => NULL,
+)
+Request URL: /newsletter/css/cake.generic.css
+Stack Trace:
+#0 C:\wamp64\www\newsletter\webroot\index.php(86): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#1 {main}
+2016-12-12 10:15:55 Error: [MissingControllerException] Controller class ImgController could not be found.
+Exception Attributes: array (
+  'class' => 'ImgController',
+  'plugin' => NULL,
+)
+Request URL: /newsletter/img/cake.power.gif
+Stack Trace:
+#0 C:\wamp64\www\newsletter\webroot\index.php(86): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#1 {main}
+2016-12-12 10:15:57 Error: [MissingConnectionException] Database connection "Mysql" is missing, or could not be created.
+Exception Attributes: array (
+  'class' => 'Mysql',
+  'message' => 'SQLSTATE[HY000] [1045] Access denied for user \'\'@\'localhost\' (using password: NO)',
+  'enabled' => true,
+)
+Request URL: /newsletter/login
+Stack Trace:
+#0 C:\wamp64\www\newsletter\Cake\2.7.7\lib\Cake\Model\Datasource\DboSource.php(260): Mysql->connect()
+#1 C:\wamp64\www\newsletter\Cake\2.7.7\lib\Cake\Model\ConnectionManager.php(105): DboSource->__construct(Array)
+#2 C:\wamp64\www\newsletter\Cake\2.7.7\lib\Cake\Model\Model.php(3626): ConnectionManager::getDataSource('default')
+#3 C:\wamp64\www\newsletter\Cake\2.7.7\lib\Cake\Model\Model.php(1155): Model->setDataSource('default')
+#4 C:\wamp64\www\newsletter\Cake\2.7.7\lib\Cake\Model\Model.php(3653): Model->setSource('administradores')
+#5 C:\wamp64\www\newsletter\Cake\2.7.7\lib\Cake\Model\Model.php(3031): Model->getDataSource()
+#6 C:\wamp64\www\newsletter\Cake\2.7.7\lib\Cake\Model\Model.php(3003): Model->_readDataSource('first', Array)
+#7 C:\wamp64\www\newsletter\Controller\AppController.php(153): Model->find('first', Array)
+#8 C:\wamp64\www\newsletter\Controller\AppController.php(134): AppController->obtenerAvatar()
+#9 [internal function]: AppController->beforeRender(Object(CakeEvent))
+#10 C:\wamp64\www\newsletter\Cake\2.7.7\lib\Cake\Event\CakeEventManager.php(243): call_user_func(Array, Object(CakeEvent))
+#11 C:\wamp64\www\newsletter\Cake\2.7.7\lib\Cake\Controller\Controller.php(933): CakeEventManager->dispatch(Object(CakeEvent))
+#12 C:\wamp64\www\newsletter\Cake\2.7.7\lib\Cake\Routing\Dispatcher.php(200): Controller->render()
+#13 C:\wamp64\www\newsletter\Cake\2.7.7\lib\Cake\Routing\Dispatcher.php(167): Dispatcher->_invoke(Object(AdministradoresController), Object(CakeRequest))
+#14 C:\wamp64\www\newsletter\webroot\index.php(86): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#15 {main}
+2016-12-12 10:15:57 Error: [MissingControllerException] Controller class CssController could not be found.
+Exception Attributes: array (
+  'class' => 'CssController',
+  'plugin' => NULL,
+)
+Request URL: /newsletter/css/cake.generic.css
+Stack Trace:
+#0 C:\wamp64\www\newsletter\webroot\index.php(86): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#1 {main}
+2016-12-12 10:15:57 Error: [MissingControllerException] Controller class ImgController could not be found.
+Exception Attributes: array (
+  'class' => 'ImgController',
+  'plugin' => NULL,
+)
+Request URL: /newsletter/img/cake.power.gif
+Stack Trace:
+#0 C:\wamp64\www\newsletter\webroot\index.php(86): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#1 {main}
+2016-12-12 10:15:57 Error: [MissingConnectionException] Database connection "Mysql" is missing, or could not be created.
+Exception Attributes: array (
+  'class' => 'Mysql',
+  'message' => 'SQLSTATE[HY000] [1045] Access denied for user \'\'@\'localhost\' (using password: NO)',
+  'enabled' => true,
+)
+Request URL: /newsletter/login
+Stack Trace:
+#0 C:\wamp64\www\newsletter\Cake\2.7.7\lib\Cake\Model\Datasource\DboSource.php(260): Mysql->connect()
+#1 C:\wamp64\www\newsletter\Cake\2.7.7\lib\Cake\Model\ConnectionManager.php(105): DboSource->__construct(Array)
+#2 C:\wamp64\www\newsletter\Cake\2.7.7\lib\Cake\Model\Model.php(3626): ConnectionManager::getDataSource('default')
+#3 C:\wamp64\www\newsletter\Cake\2.7.7\lib\Cake\Model\Model.php(1155): Model->setDataSource('default')
+#4 C:\wamp64\www\newsletter\Cake\2.7.7\lib\Cake\Model\Model.php(3653): Model->setSource('administradores')
+#5 C:\wamp64\www\newsletter\Cake\2.7.7\lib\Cake\Model\Model.php(3031): Model->getDataSource()
+#6 C:\wamp64\www\newsletter\Cake\2.7.7\lib\Cake\Model\Model.php(3003): Model->_readDataSource('first', Array)
+#7 C:\wamp64\www\newsletter\Controller\AppController.php(153): Model->find('first', Array)
+#8 C:\wamp64\www\newsletter\Controller\AppController.php(134): AppController->obtenerAvatar()
+#9 [internal function]: AppController->beforeRender(Object(CakeEvent))
+#10 C:\wamp64\www\newsletter\Cake\2.7.7\lib\Cake\Event\CakeEventManager.php(243): call_user_func(Array, Object(CakeEvent))
+#11 C:\wamp64\www\newsletter\Cake\2.7.7\lib\Cake\Controller\Controller.php(933): CakeEventManager->dispatch(Object(CakeEvent))
+#12 C:\wamp64\www\newsletter\Cake\2.7.7\lib\Cake\Routing\Dispatcher.php(200): Controller->render()
+#13 C:\wamp64\www\newsletter\Cake\2.7.7\lib\Cake\Routing\Dispatcher.php(167): Dispatcher->_invoke(Object(AdministradoresController), Object(CakeRequest))
+#14 C:\wamp64\www\newsletter\webroot\index.php(86): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#15 {main}
+2016-12-12 10:15:57 Error: [MissingControllerException] Controller class CssController could not be found.
+Exception Attributes: array (
+  'class' => 'CssController',
+  'plugin' => NULL,
+)
+Request URL: /newsletter/css/cake.generic.css
+Stack Trace:
+#0 C:\wamp64\www\newsletter\webroot\index.php(86): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#1 {main}
+2016-12-12 10:15:57 Error: [MissingControllerException] Controller class ImgController could not be found.
+Exception Attributes: array (
+  'class' => 'ImgController',
+  'plugin' => NULL,
+)
+Request URL: /newsletter/img/cake.power.gif
+Stack Trace:
+#0 C:\wamp64\www\newsletter\webroot\index.php(86): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#1 {main}
+2016-12-12 10:16:44 Error: [MissingConnectionException] Database connection "Mysql" is missing, or could not be created.
+Exception Attributes: array (
+  'class' => 'Mysql',
+  'message' => 'SQLSTATE[HY000] [1045] Access denied for user \'\'@\'localhost\' (using password: NO)',
+  'enabled' => true,
+)
+Request URL: /newsletter/login
+Stack Trace:
+#0 C:\wamp64\www\newsletter\Cake\2.7.7\lib\Cake\Model\Datasource\DboSource.php(260): Mysql->connect()
+#1 C:\wamp64\www\newsletter\Cake\2.7.7\lib\Cake\Model\ConnectionManager.php(105): DboSource->__construct(Array)
+#2 C:\wamp64\www\newsletter\Cake\2.7.7\lib\Cake\Model\Model.php(3626): ConnectionManager::getDataSource('default')
+#3 C:\wamp64\www\newsletter\Cake\2.7.7\lib\Cake\Model\Model.php(1155): Model->setDataSource('default')
+#4 C:\wamp64\www\newsletter\Cake\2.7.7\lib\Cake\Model\Model.php(3653): Model->setSource('administradores')
+#5 C:\wamp64\www\newsletter\Cake\2.7.7\lib\Cake\Model\Model.php(3031): Model->getDataSource()
+#6 C:\wamp64\www\newsletter\Cake\2.7.7\lib\Cake\Model\Model.php(3003): Model->_readDataSource('first', Array)
+#7 C:\wamp64\www\newsletter\Controller\AppController.php(153): Model->find('first', Array)
+#8 C:\wamp64\www\newsletter\Controller\AppController.php(134): AppController->obtenerAvatar()
+#9 [internal function]: AppController->beforeRender(Object(CakeEvent))
+#10 C:\wamp64\www\newsletter\Cake\2.7.7\lib\Cake\Event\CakeEventManager.php(243): call_user_func(Array, Object(CakeEvent))
+#11 C:\wamp64\www\newsletter\Cake\2.7.7\lib\Cake\Controller\Controller.php(933): CakeEventManager->dispatch(Object(CakeEvent))
+#12 C:\wamp64\www\newsletter\Cake\2.7.7\lib\Cake\Routing\Dispatcher.php(200): Controller->render()
+#13 C:\wamp64\www\newsletter\Cake\2.7.7\lib\Cake\Routing\Dispatcher.php(167): Dispatcher->_invoke(Object(AdministradoresController), Object(CakeRequest))
+#14 C:\wamp64\www\newsletter\webroot\index.php(86): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#15 {main}
+2016-12-12 10:16:45 Error: [MissingControllerException] Controller class ImgController could not be found.
+Exception Attributes: array (
+  'class' => 'ImgController',
+  'plugin' => NULL,
+)
+Request URL: /newsletter/img/cake.power.gif
+Stack Trace:
+#0 C:\wamp64\www\newsletter\webroot\index.php(86): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#1 {main}
+2016-12-12 10:16:45 Error: [MissingControllerException] Controller class CssController could not be found.
+Exception Attributes: array (
+  'class' => 'CssController',
+  'plugin' => NULL,
+)
+Request URL: /newsletter/css/cake.generic.css
+Stack Trace:
+#0 C:\wamp64\www\newsletter\webroot\index.php(86): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#1 {main}
+2016-12-12 10:16:45 Error: [MissingControllerException] Controller class ImgController could not be found.
+Exception Attributes: array (
+  'class' => 'ImgController',
+  'plugin' => NULL,
+)
+Request URL: /newsletter/img/cake.power.gif
+Stack Trace:
+#0 C:\wamp64\www\newsletter\webroot\index.php(86): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#1 {main}
+2016-12-13 09:39:01 Error: [MissingControllerException] Controller class Favicon.icoController could not be found.
+Exception Attributes: array (
+  'class' => 'Favicon.icoController',
+  'plugin' => NULL,
+)
+Request URL: /newsletter/favicon.ico
+Stack Trace:
+#0 C:\wamp64\www\newsletter\webroot\index.php(86): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#1 {main}

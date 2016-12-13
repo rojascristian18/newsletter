@@ -337,5 +337,29 @@ class CategoriasController extends AppController
 
 	}
 
+	/**
+	 *  Función que elimina los productos asociados
+	 * 	@param $id 		int 	Identificador de la categoría
+	 */
+	public function admin_clear($id = null) 
+	{
+		$this->Categoria->id = $id;
+
+		if ( ! $this->Categoria->exists() )
+		{
+			$this->Session->setFlash('La categoria no existe.', null, array(), 'danger');
+			$this->redirect(array('action' => 'index'));
+		}
+
+		// Eliminar asociaciones con toolmanía
+		if ( $this->Categoria->CategoriasToolmania->deleteAll(array('CategoriasToolmania.categoria_id' => $id)) ) {
+			$this->Session->setFlash('Categoría restablecida correctamente.', null, array(), 'success');
+			$this->redirect(array('action' => 'index'));
+		}else{
+			$this->Session->setFlash('Ocurrió un error inesperado. Intente nuevamente.', null, array(), 'danger');
+			$this->redirect(array('action' => 'index'));
+		}
+	}
+
 }
 

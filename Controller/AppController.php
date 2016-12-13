@@ -200,4 +200,29 @@ class AppController extends Controller
 			return round($precio);
 		}
 	}
+
+	/**
+	* Función que verifica si la url tiene el guión final y el http
+	* de lo contrario lo agregar
+	* @param 	$txt 	String 		Texto a formatear
+	* @return 	$txt 	String 		Texto formateado
+	*/
+	public function formatear_url($txt = null) 
+	{
+		if (!empty($txt)) {
+			
+			$largo_url = strlen($txt);
+
+			if ( substr($txt, 0, 7) != 'http://' && substr($txt, 0, 8) != 'https://' ) {
+				$txt = 'http://' . $txt;
+			}
+
+			if ( substr($txt, ($largo_url - 1), 1) != '/' ) {
+				$txt = $txt . '/';
+			}
+
+		}
+
+		return $txt;
+	}
 }

@@ -44,7 +44,7 @@ class Email extends AppModel
 			'notBlank' => array(
 				'rule'			=> array('notBlank'),
 				'last'			=> true,
-				//'message'		=> 'Mensaje de validación personalizado',
+				'message'		=> 'Debe ingresar un nombre',
 				//'allowEmpty'	=> true,
 				//'required'		=> false,
 				//'on'			=> 'update', // Solo valida en operaciones de 'create' o 'update'
@@ -60,6 +60,16 @@ class Email extends AppModel
 				//'on'			=> 'update', // Solo valida en operaciones de 'create' o 'update'
 			),
 		),
+		'sitio_url' => array(
+			'url' => array(
+				'rule'			=> array('url'),
+				'last'			=> true,
+				'message'		=> 'Formato de url no válido',
+				//'allowEmpty'	=> true,
+				//'required'		=> false,
+				//'on'			=> 'update', // Solo valida en operaciones de 'create' o 'update'
+			),
+		)
 	);
 
 	/**

@@ -36,9 +36,28 @@
 									<td><?= h($categoria['Categoria']['color_titulo']); ?>&nbsp;</td>
 									<td>
 										<?= $this->Html->link('<i class="fa fa-edit"></i> Editar', array('action' => 'edit', $categoria['Categoria']['id']), array('class' => 'btn btn-xs btn-info', 'rel' => 'tooltip', 'title' => 'Editar este registro', 'escape' => false)); ?>
+										<a href="#" class="mb-control btn btn-primary btn-xs" data-box="#mb-cat<?=$categoria['Categoria']['id'];?>"><i class="fa fa-history"></i> Restablecer</a>
+										<div class="message-box message-box-warning animated fadeIn" data-sound="alert" id="mb-cat<?=$categoria['Categoria']['id'];?>">
+											<div class="mb-container">
+												<div class="mb-middle">
+													<div class="mb-title"><span class="fa fa-history"></span>¿Restablecer <strong>categoría</strong>?</div>
+													<div class="mb-content">
+														<p>¿Seguro que quieres restablecer esta categoría?</p>
+														<p>Se quitarán los productos asociados a esta categoría</p>
+														<p>Para cancelar presiona No</p>
+													</div>
+													<div class="mb-footer">
+														<div class="pull-right">
+															<?= $this->Html->link('<i class="fa fa-history"></i> Restablecer', array('action' => 'clear', $categoria['Categoria']['id']), array('class' => 'btn btn-lg btn-primary', 'rel' => 'tooltip', 'title' => 'Editar este registro', 'escape' => false)); ?>
+															<button class="btn btn-default btn-lg mb-control-close">No</button>
+														</div>
+													</div>
+												</div>
+											</div>
+										</div>
 									<? if ($permiso) : ?>
 										<? if ($categoria['Categoria']['activo'] == 1) { ?>
-											<?= $this->Form->postLink('<i class="fa fa fa-eye-slash"></i> Desactivar', array('action' => 'desactivar', $categoria['Categoria']['id']), array('class' => 'btn btn-warning btn-xs', 'rel' => 'tooltip', 'title' => 'Desactivar este registro', 'escape' => false)); ?>
+											<?= $this->Form->postLink('<i class="fa fa-eye-slash"></i> Desactivar', array('action' => 'desactivar', $categoria['Categoria']['id']), array('class' => 'btn btn-warning btn-xs', 'rel' => 'tooltip', 'title' => 'Desactivar este registro', 'escape' => false)); ?>
 										<? }else{ ?>
 											<?= $this->Form->postLink('<i class="fa fa-eye"></i> Activar', array('action' => 'activar', $categoria['Categoria']['id']), array('class' => 'btn btn-primary btn-xs', 'rel' => 'tooltip', 'title' => 'Activar este registro', 'escape' => false)); ?>
 										<?	} ?>

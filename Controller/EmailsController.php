@@ -93,6 +93,8 @@ class EmailsController extends AppController
 
 		{	//prx($this->request->data);
 
+			// Se verifica y formatea la url
+			$this->request->data['Email']['sitio_url'] = $this->formatear_url($this->request->data['Email']['sitio_url']);
 
 
 			/**
@@ -133,9 +135,7 @@ class EmailsController extends AppController
 
 		}
 
-		else
-
-		{
+	
 
 			$this->request->data	= $this->Email->find('first', array(
 
@@ -145,8 +145,7 @@ class EmailsController extends AppController
 
 			));
 
-		}
-
+	
 		
 
 		$plantillas	= $this->Email->Plantilla->find('list', array('conditions' => array('activo' => 1)));
@@ -399,7 +398,7 @@ class EmailsController extends AppController
 			foreach ($categorias as $indice => $categoria) {
 
 				/**
-				* Condiciones para odenar productos
+				* Condiciones para ordenar productos
 				*/
 				if (isset($categoria['Categoria']['orden_productos']) && ! empty($categoria['Categoria']['orden_productos'])) {
 					
@@ -438,7 +437,7 @@ class EmailsController extends AppController
 				}
 
 				/**
-				* Obtenemos los productos elacionados a la categoría
+				* Obtenemos los productos relacionados a la categoría
 				*/
 				$relacionados = ClassRegistry::init('Categoria')->CategoriasToolmania->find('all', array(
 					'fields' => array('CategoriasToolmania.id_product'),

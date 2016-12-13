@@ -23,6 +23,12 @@ class Categoria extends AppModel
 							'width'		=> 100,
 							'height'	=> 100,
 							'crop'		=> true
+						),
+						array(
+							'prefix'	=> 'title',
+							'width'		=> 600,
+							'height'	=> 33,
+							'crop'		=> true
 						)
 					)
 				)
