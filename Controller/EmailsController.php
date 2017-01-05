@@ -516,8 +516,12 @@ class EmailsController extends AppController
 					'order' => $ordenProductos
 				));
 
+
+
 				// Agregamos los productos al arreglo final
 				$categoria['Producto'] = $productos;
+
+		
 
 
 				// Se abre el bloque sección
@@ -542,6 +546,8 @@ class EmailsController extends AppController
 					foreach ($producto['SpecificPricePriority'] as $criterio) {
 						$precioEspecificoPrioridad = explode(';', $criterio['priority']);
 					}
+
+					$producto['Toolmania']['valor_final'] = $producto['Toolmania']['valor_iva'];
 
 					// Retornar último precio espeficico según criterio del producto
 					foreach ($producto['SpecificPrice'] as $precio) {

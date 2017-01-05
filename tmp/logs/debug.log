@@ -409,3 +409,47 @@ Dispatcher::_invoke() - APP/Cake/2.7.7/lib/Cake/Routing/Dispatcher.php, line 193
 Dispatcher::dispatch() - APP/Cake/2.7.7/lib/Cake/Routing/Dispatcher.php, line 167
 [main] - APP/webroot/index.php, line 86
 
+2017-01-05 15:42:42 Debug: Notice (8): Undefined index: valor_final in [C:\wamp64\www\newsletter\View\Toolmanias\admin_associate.ctp, line 41]
+Trace:
+include - APP\View\Toolmanias\admin_associate.ctp, line 41
+View::_evaluate() - APP\Cake\2.7.7\lib\Cake\View\View.php, line 971
+View::_render() - APP\Cake\2.7.7\lib\Cake\View\View.php, line 933
+View::render() - APP\Cake\2.7.7\lib\Cake\View\View.php, line 473
+Controller::render() - APP\Cake\2.7.7\lib\Cake\Controller\Controller.php, line 960
+Dispatcher::_invoke() - APP\Cake\2.7.7\lib\Cake\Routing\Dispatcher.php, line 200
+Dispatcher::dispatch() - APP\Cake\2.7.7\lib\Cake\Routing\Dispatcher.php, line 167
+[main] - APP\webroot\index.php, line 86
+
+2017-01-05 15:43:38 Debug: Notice (8): Undefined index: ultimo_html in [C:\wamp64\www\newsletter\View\Emails\admin_edit.ctp, line 72]
+Trace:
+include - APP\View\Emails\admin_edit.ctp, line 72
+View::_evaluate() - APP\Cake\2.7.7\lib\Cake\View\View.php, line 971
+View::_render() - APP\Cake\2.7.7\lib\Cake\View\View.php, line 933
+View::render() - APP\Cake\2.7.7\lib\Cake\View\View.php, line 473
+Controller::render() - APP\Cake\2.7.7\lib\Cake\Controller\Controller.php, line 960
+Dispatcher::_invoke() - APP\Cake\2.7.7\lib\Cake\Routing\Dispatcher.php, line 200
+Dispatcher::dispatch() - APP\Cake\2.7.7\lib\Cake\Routing\Dispatcher.php, line 167
+[main] - APP\webroot\index.php, line 86
+
+2017-01-05 15:43:43 Debug: Notice (8): Undefined index: semaforo in [C:\wamp64\www\newsletter\Model\Email.php, line 128]
+Trace:
+Email::afterSave() - APP\Model\Email.php, line 128
+CakeEventManager::dispatch() - APP\Cake\2.7.7\lib\Cake\Event\CakeEventManager.php, line 241
+Model::_doSave() - APP\Cake\2.7.7\lib\Cake\Model\Model.php, line 1961
+Model::save() - APP\Cake\2.7.7\lib\Cake\Model\Model.php, line 1751
+EmailsController::admin_edit() - APP\Controller\EmailsController.php, line 118
+ReflectionMethod::invokeArgs() - [internal], line ??
+Controller::invokeAction() - APP\Cake\2.7.7\lib\Cake\Controller\Controller.php, line 490
+Dispatcher::_invoke() - APP\Cake\2.7.7\lib\Cake\Routing\Dispatcher.php, line 193
+Dispatcher::dispatch() - APP\Cake\2.7.7\lib\Cake\Routing\Dispatcher.php, line 167
+[main] - APP\webroot\index.php, line 86
+
+2017-01-05 15:43:48 Debug: Notice (8): Undefined index: valor_final in [C:\wamp64\www\newsletter\Controller\EmailsController.php, line 564]
+Trace:
+EmailsController::admin_generarHtml() - APP\Controller\EmailsController.php, line 564
+ReflectionMethod::invokeArgs() - [internal], line ??
+Controller::invokeAction() - APP\Cake\2.7.7\lib\Cake\Controller\Controller.php, line 490
+Dispatcher::_invoke() - APP\Cake\2.7.7\lib\Cake\Routing\Dispatcher.php, line 193
+Dispatcher::dispatch() - APP\Cake\2.7.7\lib\Cake\Routing\Dispatcher.php, line 167
+[main] - APP\webroot\index.php, line 86
+
