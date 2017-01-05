@@ -1152,3 +1152,26 @@ Request URL: /newsletter/favicon.ico
 Stack Trace:
 #0 C:\wamp64\www\newsletter\webroot\index.php(86): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
 #1 {main}
+2017-01-05 15:41:43 Error: [MissingControllerException] Controller class Favicon.icoController could not be found.
+Exception Attributes: array (
+  'class' => 'Favicon.icoController',
+  'plugin' => NULL,
+)
+Request URL: /newsletter/favicon.ico
+Stack Trace:
+#0 C:\wamp64\www\newsletter\webroot\index.php(86): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#1 {main}
+2017-01-05 15:43:01 Warning: Warning (2): Missing argument 1 for Model::afterSave(), called in C:\wamp64\www\newsletter\Model\Toolmania.php on line 148 and defined in [C:\wamp64\www\newsletter\Cake\2.7.7\lib\Cake\Model\Model.php, line 3791]
+Trace:
+Model::afterSave() - APP\Cake\2.7.7\lib\Cake\Model\Model.php, line 3791
+Toolmania::afterSave() - APP\Model\Toolmania.php, line 148
+CakeEventManager::dispatch() - APP\Cake\2.7.7\lib\Cake\Event\CakeEventManager.php, line 241
+Model::_doSave() - APP\Cake\2.7.7\lib\Cake\Model\Model.php, line 1961
+Model::save() - APP\Cake\2.7.7\lib\Cake\Model\Model.php, line 1751
+ToolmaniasController::admin_associate() - APP\Controller\ToolmaniasController.php, line 155
+ReflectionMethod::invokeArgs() - [internal], line ??
+Controller::invokeAction() - APP\Cake\2.7.7\lib\Cake\Controller\Controller.php, line 490
+Dispatcher::_invoke() - APP\Cake\2.7.7\lib\Cake\Routing\Dispatcher.php, line 193
+Dispatcher::dispatch() - APP\Cake\2.7.7\lib\Cake\Routing\Dispatcher.php, line 167
+[main] - APP\webroot\index.php, line 86
+

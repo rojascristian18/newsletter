@@ -289,10 +289,17 @@ class ToolmaniasController extends AppController {
 			$precioEspecificoPrioridad = explode(';', $criterio['priority']);
 		}
 
+		$producto['Toolmania']['valor_final'] = $producto['Toolmania']['valor_iva'];
+
 		// Retornar precio espeficico según criterio
 		foreach ($producto['SpecificPrice'] as $precio) {
-			$producto['Toolmania']['valor_final'] = $this->precio($producto['Toolmania']['valor_iva'], ($precio['reduction'] * 100 * -1) );
-			$producto['Toolmania']['descuento'] = ($precio['reduction'] * 100 * -1 );
+
+			if ( $precio['reduction'] == 0 ) {
+				$producto['Toolmania']['valor_final'] = $producto['Toolmania']['valor_iva'];
+			}else{
+				$producto['Toolmania']['valor_final'] = $this->precio($producto['Toolmania']['valor_iva'], ($precio['reduction'] * 100 * -1) );
+				$producto['Toolmania']['descuento'] = ($precio['reduction'] * 100 * -1 );
+			}
 		}
 
 		$categorias = $this->Toolmania->Categoria->find('list', array('conditions' => array('Categoria.activo' => 1)));
